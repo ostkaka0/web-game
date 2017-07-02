@@ -1,0 +1,2 @@
+# Hashes of file build rules.
+636e9241a83e762f061e50d4488334b7 deps/SDL2/CMakeFiles/uninstall

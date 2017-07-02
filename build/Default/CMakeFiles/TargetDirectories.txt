@@ -1,0 +1,17 @@
+/home/ost/git/web-game/build/Default/CMakeFiles/install/strip.dir
+/home/ost/git/web-game/build/Default/CMakeFiles/install/local.dir
+/home/ost/git/web-game/build/Default/CMakeFiles/web-game.dir
+/home/ost/git/web-game/build/Default/CMakeFiles/edit_cache.dir
+/home/ost/git/web-game/build/Default/CMakeFiles/rebuild_cache.dir
+/home/ost/git/web-game/build/Default/CMakeFiles/install.dir
+/home/ost/git/web-game/build/Default/CMakeFiles/list_install_components.dir
+/home/ost/git/web-game/build/Default/deps/SDL2/CMakeFiles/install.dir
+/home/ost/git/web-game/build/Default/deps/SDL2/CMakeFiles/list_install_components.dir
+/home/ost/git/web-game/build/Default/deps/SDL2/CMakeFiles/rebuild_cache.dir
+/home/ost/git/web-game/build/Default/deps/SDL2/CMakeFiles/edit_cache.dir
+/home/ost/git/web-game/build/Default/deps/SDL2/CMakeFiles/SDL2main.dir
+/home/ost/git/web-game/build/Default/deps/SDL2/CMakeFiles/SDL2-static.dir
+/home/ost/git/web-game/build/Default/deps/SDL2/CMakeFiles/install/strip.dir
+/home/ost/git/web-game/build/Default/deps/SDL2/CMakeFiles/install/local.dir
+/home/ost/git/web-game/build/Default/deps/SDL2/CMakeFiles/SDL2.dir
+/home/ost/git/web-game/build/Default/deps/SDL2/CMakeFiles/uninstall.dir

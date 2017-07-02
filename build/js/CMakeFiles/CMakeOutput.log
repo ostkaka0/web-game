@@ -1,0 +1,1726 @@
+The target system is: Emscripten - 1 - x86
+The host system is: Linux - 4.11.7-200.fc25.x86_64 - x86_64
+Performing C SOURCE FILE Test HAVE_GCC_WALL succeeded with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_22e45/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_22e45.dir/build.make CMakeFiles/cmTC_22e45.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_22e45.dir/src.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -DHAVE_GCC_WALL -s ERROR_ON_UNDEFINED_SYMBOLS=1   -Wall -o CMakeFiles/cmTC_22e45.dir/src.c.o   -c /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_22e45.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_22e45.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -DHAVE_GCC_WALL -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_22e45.dir/objects1.rsp  -o cmTC_22e45.js 
+INFO:root:generating system library: libc.bc... (this will be cached in "/home/ost/.emscripten_cache/asmjs/libc.bc" for subsequent builds)
+INFO:root: - ok
+INFO:root:generating system library: dlmalloc.bc... (this will be cached in "/home/ost/.emscripten_cache/asmjs/dlmalloc.bc" for subsequent builds)
+INFO:root: - ok
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test HAVE_GCC_WDECLARATION_AFTER_STATEMENT succeeded with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_54575/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_54575.dir/build.make CMakeFiles/cmTC_54575.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_54575.dir/src.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -DHAVE_GCC_WDECLARATION_AFTER_STATEMENT -s ERROR_ON_UNDEFINED_SYMBOLS=1   -Wdeclaration-after-statement -o CMakeFiles/cmTC_54575.dir/src.c.o   -c /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_54575.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_54575.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -DHAVE_GCC_WDECLARATION_AFTER_STATEMENT -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_54575.dir/objects1.rsp  -o cmTC_54575.js 
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test HAVE_GCC_WERROR_DECLARATION_AFTER_STATEMENT succeeded with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_804eb/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_804eb.dir/build.make CMakeFiles/cmTC_804eb.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_804eb.dir/src.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -DHAVE_GCC_WERROR_DECLARATION_AFTER_STATEMENT -s ERROR_ON_UNDEFINED_SYMBOLS=1   -Werror=declaration-after-statement -o CMakeFiles/cmTC_804eb.dir/src.c.o   -c /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_804eb.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_804eb.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -DHAVE_GCC_WERROR_DECLARATION_AFTER_STATEMENT -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_804eb.dir/objects1.rsp  -o cmTC_804eb.js 
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test HAVE_GCC_FVISIBILITY succeeded with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_61bfe/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_61bfe.dir/build.make CMakeFiles/cmTC_61bfe.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_61bfe.dir/src.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -DHAVE_GCC_FVISIBILITY -fvisibility=hidden -Werror   -o CMakeFiles/cmTC_61bfe.dir/src.c.o   -c /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_61bfe.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_61bfe.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -DHAVE_GCC_FVISIBILITY -fvisibility=hidden -Werror    @CMakeFiles/cmTC_61bfe.dir/objects1.rsp  -o cmTC_61bfe.js 
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+Source file was:
+
+      #if !defined(__GNUC__) || __GNUC__ < 4
+      #error SDL only uses visibility attributes in GCC 4 or newer
+      #endif
+      int main(int argc, char **argv) {}
+Performing C SOURCE FILE Test HAVE_GCC_WSHADOW succeeded with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_3932a/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_3932a.dir/build.make CMakeFiles/cmTC_3932a.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_3932a.dir/src.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -DHAVE_GCC_WSHADOW -s ERROR_ON_UNDEFINED_SYMBOLS=1   -Wshadow -o CMakeFiles/cmTC_3932a.dir/src.c.o   -c /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_3932a.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3932a.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -DHAVE_GCC_WSHADOW -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_3932a.dir/objects1.rsp  -o cmTC_3932a.js 
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test HAVE_NO_UNDEFINED succeeded with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_98ff4/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_98ff4.dir/build.make CMakeFiles/cmTC_98ff4.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_98ff4.dir/src.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -DHAVE_NO_UNDEFINED -Wl,--no-undefined   -o CMakeFiles/cmTC_98ff4.dir/src.c.o   -c /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_98ff4.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_98ff4.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -DHAVE_NO_UNDEFINED -Wl,--no-undefined    @CMakeFiles/cmTC_98ff4.dir/objects1.rsp  -o cmTC_98ff4.js 
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+Source file was:
+int main(void) { return 0; }
+Determining if the include file sys/types.h exists passed with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_ad47c/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_ad47c.dir/build.make CMakeFiles/cmTC_ad47c.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_ad47c.dir/CheckIncludeFile.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_ad47c.dir/CheckIncludeFile.c.o   -c /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_ad47c.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ad47c.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_ad47c.dir/objects1.rsp  -o cmTC_ad47c.js 
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+
+Determining if the include file stdio.h exists passed with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_8a45f/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_8a45f.dir/build.make CMakeFiles/cmTC_8a45f.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_8a45f.dir/CheckIncludeFile.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_8a45f.dir/CheckIncludeFile.c.o   -c /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_8a45f.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8a45f.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_8a45f.dir/objects1.rsp  -o cmTC_8a45f.js 
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+
+Determining if the include file stdlib.h exists passed with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_cc1e2/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_cc1e2.dir/build.make CMakeFiles/cmTC_cc1e2.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_cc1e2.dir/CheckIncludeFile.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_cc1e2.dir/CheckIncludeFile.c.o   -c /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_cc1e2.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cc1e2.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_cc1e2.dir/objects1.rsp  -o cmTC_cc1e2.js 
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+
+Determining if the include file stddef.h exists passed with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_bd79f/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_bd79f.dir/build.make CMakeFiles/cmTC_bd79f.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_bd79f.dir/CheckIncludeFile.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_bd79f.dir/CheckIncludeFile.c.o   -c /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_bd79f.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bd79f.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_bd79f.dir/objects1.rsp  -o cmTC_bd79f.js 
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+
+Determining if the include file stdarg.h exists passed with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_ebf66/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_ebf66.dir/build.make CMakeFiles/cmTC_ebf66.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_ebf66.dir/CheckIncludeFile.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_ebf66.dir/CheckIncludeFile.c.o   -c /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_ebf66.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ebf66.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_ebf66.dir/objects1.rsp  -o cmTC_ebf66.js 
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+
+Determining if the include file malloc.h exists passed with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_d0a97/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_d0a97.dir/build.make CMakeFiles/cmTC_d0a97.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d0a97.dir/CheckIncludeFile.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_d0a97.dir/CheckIncludeFile.c.o   -c /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_d0a97.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d0a97.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_d0a97.dir/objects1.rsp  -o cmTC_d0a97.js 
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+
+Determining if the include file memory.h exists passed with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_8d023/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_8d023.dir/build.make CMakeFiles/cmTC_8d023.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_8d023.dir/CheckIncludeFile.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_8d023.dir/CheckIncludeFile.c.o   -c /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_8d023.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8d023.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_8d023.dir/objects1.rsp  -o cmTC_8d023.js 
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+
+Determining if the include file string.h exists passed with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_a69c9/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_a69c9.dir/build.make CMakeFiles/cmTC_a69c9.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_a69c9.dir/CheckIncludeFile.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_a69c9.dir/CheckIncludeFile.c.o   -c /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_a69c9.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a69c9.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_a69c9.dir/objects1.rsp  -o cmTC_a69c9.js 
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+
+Determining if the include file strings.h exists passed with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_0db68/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_0db68.dir/build.make CMakeFiles/cmTC_0db68.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_0db68.dir/CheckIncludeFile.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_0db68.dir/CheckIncludeFile.c.o   -c /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_0db68.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0db68.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_0db68.dir/objects1.rsp  -o cmTC_0db68.js 
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+
+Determining if the include file inttypes.h exists passed with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_cf1ec/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_cf1ec.dir/build.make CMakeFiles/cmTC_cf1ec.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_cf1ec.dir/CheckIncludeFile.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_cf1ec.dir/CheckIncludeFile.c.o   -c /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_cf1ec.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cf1ec.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_cf1ec.dir/objects1.rsp  -o cmTC_cf1ec.js 
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+
+Determining if the include file stdint.h exists passed with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_15e11/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_15e11.dir/build.make CMakeFiles/cmTC_15e11.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_15e11.dir/CheckIncludeFile.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_15e11.dir/CheckIncludeFile.c.o   -c /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_15e11.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_15e11.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_15e11.dir/objects1.rsp  -o cmTC_15e11.js 
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+
+Determining if the include file ctype.h exists passed with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_57069/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_57069.dir/build.make CMakeFiles/cmTC_57069.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_57069.dir/CheckIncludeFile.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_57069.dir/CheckIncludeFile.c.o   -c /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_57069.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_57069.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_57069.dir/objects1.rsp  -o cmTC_57069.js 
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+
+Determining if the include file math.h exists passed with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_af6ba/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_af6ba.dir/build.make CMakeFiles/cmTC_af6ba.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_af6ba.dir/CheckIncludeFile.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_af6ba.dir/CheckIncludeFile.c.o   -c /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_af6ba.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_af6ba.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_af6ba.dir/objects1.rsp  -o cmTC_af6ba.js 
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+
+Determining if the include file iconv.h exists passed with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_2311e/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_2311e.dir/build.make CMakeFiles/cmTC_2311e.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_2311e.dir/CheckIncludeFile.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_2311e.dir/CheckIncludeFile.c.o   -c /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_2311e.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2311e.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_2311e.dir/objects1.rsp  -o cmTC_2311e.js 
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+
+Determining if the include file signal.h exists passed with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_e5133/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_e5133.dir/build.make CMakeFiles/cmTC_e5133.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e5133.dir/CheckIncludeFile.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_e5133.dir/CheckIncludeFile.c.o   -c /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_e5133.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e5133.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_e5133.dir/objects1.rsp  -o cmTC_e5133.js 
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+
+Determining if files dlfcn.h;stdint.h;stddef.h;inttypes.h;stdlib.h;strings.h;string.h;float.h exist passed with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_8806c/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_8806c.dir/build.make CMakeFiles/cmTC_8806c.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_8806c.dir/CheckIncludeFiles.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_8806c.dir/CheckIncludeFiles.c.o   -c /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+Linking C executable cmTC_8806c.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8806c.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_8806c.dir/objects1.rsp  -o cmTC_8806c.js 
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+
+Determining size of size_t passed with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_5d69e/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_5d69e.dir/build.make CMakeFiles/cmTC_5d69e.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_5d69e.dir/SIZEOF_SIZE_T.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_5d69e.dir/SIZEOF_SIZE_T.c.o   -c /home/ost/git/web-game/build/js/CMakeFiles/CheckTypeSize/SIZEOF_SIZE_T.c
+Linking C executable cmTC_5d69e.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5d69e.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_5d69e.dir/objects1.rsp  -o cmTC_5d69e.js 
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+
+Determining if the M_PI exist passed with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_79366/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_79366.dir/build.make CMakeFiles/cmTC_79366.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_79366.dir/CheckSymbolExists.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_79366.dir/CheckSymbolExists.c.o   -c /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_79366.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_79366.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_79366.dir/objects1.rsp  -o cmTC_79366.js 
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+File /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <math.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef M_PI
+  return ((int*)(&M_PI))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Performing C SOURCE FILE Test HAVE_MPROTECT succeeded with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_fb9d9/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_fb9d9.dir/build.make CMakeFiles/cmTC_fb9d9.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_fb9d9.dir/src.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -DHAVE_MPROTECT -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_fb9d9.dir/src.c.o   -c /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_fb9d9.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fb9d9.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -DHAVE_MPROTECT -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_fb9d9.dir/objects1.rsp  -o cmTC_fb9d9.js 
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+Source file was:
+#include <sys/types.h>
+                             #include <sys/mman.h>
+                             int main() { }
+Determining if the function strtod exists passed with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_ed6f8/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_ed6f8.dir/build.make CMakeFiles/cmTC_ed6f8.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_ed6f8.dir/CheckFunctionExists.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -DCHECK_FUNCTION_EXISTS=strtod -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_ed6f8.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_ed6f8.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ed6f8.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -DCHECK_FUNCTION_EXISTS=strtod -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_ed6f8.dir/objects1.rsp  -o cmTC_ed6f8.js 
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+
+Determining if the function malloc exists passed with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_f25a7/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_f25a7.dir/build.make CMakeFiles/cmTC_f25a7.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f25a7.dir/CheckFunctionExists.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -DCHECK_FUNCTION_EXISTS=malloc -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_f25a7.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: warning: incompatible redeclaration of library function 'malloc' [-Wincompatible-library-redeclaration]
+  CHECK_FUNCTION_EXISTS(void);
+  ^
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS malloc
+                              ^
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: note: 'malloc' is a builtin with type 'void *(unsigned int)'
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS malloc
+                              ^
+1 warning generated.
+Linking C executable cmTC_f25a7.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f25a7.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -DCHECK_FUNCTION_EXISTS=malloc -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_f25a7.dir/objects1.rsp  -o cmTC_f25a7.js 
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+
+Determining if the function calloc exists passed with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_fd22a/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_fd22a.dir/build.make CMakeFiles/cmTC_fd22a.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_fd22a.dir/CheckFunctionExists.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -DCHECK_FUNCTION_EXISTS=calloc -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_fd22a.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: warning: incompatible redeclaration of library function 'calloc' [-Wincompatible-library-redeclaration]
+  CHECK_FUNCTION_EXISTS(void);
+  ^
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS calloc
+                              ^
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: note: 'calloc' is a builtin with type 'void *(unsigned int, unsigned int)'
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS calloc
+                              ^
+1 warning generated.
+Linking C executable cmTC_fd22a.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fd22a.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -DCHECK_FUNCTION_EXISTS=calloc -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_fd22a.dir/objects1.rsp  -o cmTC_fd22a.js 
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+
+Determining if the function realloc exists passed with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_ea227/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_ea227.dir/build.make CMakeFiles/cmTC_ea227.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_ea227.dir/CheckFunctionExists.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -DCHECK_FUNCTION_EXISTS=realloc -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_ea227.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: warning: incompatible redeclaration of library function 'realloc' [-Wincompatible-library-redeclaration]
+  CHECK_FUNCTION_EXISTS(void);
+  ^
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS realloc
+                              ^
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: note: 'realloc' is a builtin with type 'void *(void *, unsigned int)'
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS realloc
+                              ^
+1 warning generated.
+Linking C executable cmTC_ea227.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ea227.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -DCHECK_FUNCTION_EXISTS=realloc -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_ea227.dir/objects1.rsp  -o cmTC_ea227.js 
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+
+Determining if the function free exists passed with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_e1ea7/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_e1ea7.dir/build.make CMakeFiles/cmTC_e1ea7.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e1ea7.dir/CheckFunctionExists.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -DCHECK_FUNCTION_EXISTS=free -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_e1ea7.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_e1ea7.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e1ea7.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -DCHECK_FUNCTION_EXISTS=free -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_e1ea7.dir/objects1.rsp  -o cmTC_e1ea7.js 
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+
+Determining if the function getenv exists passed with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_44aa4/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_44aa4.dir/build.make CMakeFiles/cmTC_44aa4.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_44aa4.dir/CheckFunctionExists.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -DCHECK_FUNCTION_EXISTS=getenv -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_44aa4.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_44aa4.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_44aa4.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -DCHECK_FUNCTION_EXISTS=getenv -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_44aa4.dir/objects1.rsp  -o cmTC_44aa4.js 
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+
+Determining if the function setenv exists passed with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_a0409/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_a0409.dir/build.make CMakeFiles/cmTC_a0409.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_a0409.dir/CheckFunctionExists.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -DCHECK_FUNCTION_EXISTS=setenv -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_a0409.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_a0409.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a0409.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -DCHECK_FUNCTION_EXISTS=setenv -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_a0409.dir/objects1.rsp  -o cmTC_a0409.js 
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+
+Determining if the function putenv exists passed with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_3ffc6/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_3ffc6.dir/build.make CMakeFiles/cmTC_3ffc6.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_3ffc6.dir/CheckFunctionExists.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -DCHECK_FUNCTION_EXISTS=putenv -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_3ffc6.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_3ffc6.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3ffc6.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -DCHECK_FUNCTION_EXISTS=putenv -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_3ffc6.dir/objects1.rsp  -o cmTC_3ffc6.js 
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+
+Determining if the function unsetenv exists passed with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_04405/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_04405.dir/build.make CMakeFiles/cmTC_04405.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_04405.dir/CheckFunctionExists.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -DCHECK_FUNCTION_EXISTS=unsetenv -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_04405.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_04405.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_04405.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -DCHECK_FUNCTION_EXISTS=unsetenv -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_04405.dir/objects1.rsp  -o cmTC_04405.js 
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+
+Determining if the function qsort exists passed with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_4be23/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_4be23.dir/build.make CMakeFiles/cmTC_4be23.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_4be23.dir/CheckFunctionExists.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -DCHECK_FUNCTION_EXISTS=qsort -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_4be23.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_4be23.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4be23.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -DCHECK_FUNCTION_EXISTS=qsort -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_4be23.dir/objects1.rsp  -o cmTC_4be23.js 
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+
+Determining if the function abs exists passed with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_c3f6b/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_c3f6b.dir/build.make CMakeFiles/cmTC_c3f6b.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c3f6b.dir/CheckFunctionExists.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -DCHECK_FUNCTION_EXISTS=abs -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_c3f6b.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: warning: incompatible redeclaration of library function 'abs' [-Wincompatible-library-redeclaration]
+  CHECK_FUNCTION_EXISTS(void);
+  ^
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS abs
+                              ^
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: note: 'abs' is a builtin with type 'int (int)'
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS abs
+                              ^
+1 warning generated.
+Linking C executable cmTC_c3f6b.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c3f6b.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -DCHECK_FUNCTION_EXISTS=abs -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_c3f6b.dir/objects1.rsp  -o cmTC_c3f6b.js 
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+
+Determining if the function bcopy exists passed with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_ae3bb/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_ae3bb.dir/build.make CMakeFiles/cmTC_ae3bb.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_ae3bb.dir/CheckFunctionExists.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -DCHECK_FUNCTION_EXISTS=bcopy -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_ae3bb.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_ae3bb.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ae3bb.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -DCHECK_FUNCTION_EXISTS=bcopy -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_ae3bb.dir/objects1.rsp  -o cmTC_ae3bb.js 
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+
+Determining if the function memset exists passed with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_88c86/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_88c86.dir/build.make CMakeFiles/cmTC_88c86.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_88c86.dir/CheckFunctionExists.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -DCHECK_FUNCTION_EXISTS=memset -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_88c86.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: warning: incompatible redeclaration of library function 'memset' [-Wincompatible-library-redeclaration]
+  CHECK_FUNCTION_EXISTS(void);
+  ^
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS memset
+                              ^
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: note: 'memset' is a builtin with type 'void *(void *, int, unsigned int)'
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS memset
+                              ^
+1 warning generated.
+Linking C executable cmTC_88c86.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_88c86.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -DCHECK_FUNCTION_EXISTS=memset -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_88c86.dir/objects1.rsp  -o cmTC_88c86.js 
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+
+Determining if the function memcpy exists passed with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_3b0bc/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_3b0bc.dir/build.make CMakeFiles/cmTC_3b0bc.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_3b0bc.dir/CheckFunctionExists.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -DCHECK_FUNCTION_EXISTS=memcpy -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_3b0bc.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: warning: incompatible redeclaration of library function 'memcpy' [-Wincompatible-library-redeclaration]
+  CHECK_FUNCTION_EXISTS(void);
+  ^
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS memcpy
+                              ^
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: note: 'memcpy' is a builtin with type 'void *(void *, const void *, unsigned int)'
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS memcpy
+                              ^
+1 warning generated.
+Linking C executable cmTC_3b0bc.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3b0bc.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -DCHECK_FUNCTION_EXISTS=memcpy -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_3b0bc.dir/objects1.rsp  -o cmTC_3b0bc.js 
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+
+Determining if the function memmove exists passed with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_5444c/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_5444c.dir/build.make CMakeFiles/cmTC_5444c.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_5444c.dir/CheckFunctionExists.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -DCHECK_FUNCTION_EXISTS=memmove -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_5444c.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: warning: incompatible redeclaration of library function 'memmove' [-Wincompatible-library-redeclaration]
+  CHECK_FUNCTION_EXISTS(void);
+  ^
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS memmove
+                              ^
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: note: 'memmove' is a builtin with type 'void *(void *, const void *, unsigned int)'
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS memmove
+                              ^
+1 warning generated.
+Linking C executable cmTC_5444c.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5444c.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -DCHECK_FUNCTION_EXISTS=memmove -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_5444c.dir/objects1.rsp  -o cmTC_5444c.js 
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+
+Determining if the function memcmp exists passed with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_55f8b/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_55f8b.dir/build.make CMakeFiles/cmTC_55f8b.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_55f8b.dir/CheckFunctionExists.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -DCHECK_FUNCTION_EXISTS=memcmp -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_55f8b.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: warning: incompatible redeclaration of library function 'memcmp' [-Wincompatible-library-redeclaration]
+  CHECK_FUNCTION_EXISTS(void);
+  ^
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS memcmp
+                              ^
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: note: 'memcmp' is a builtin with type 'int (const void *, const void *, unsigned int)'
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS memcmp
+                              ^
+1 warning generated.
+Linking C executable cmTC_55f8b.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_55f8b.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -DCHECK_FUNCTION_EXISTS=memcmp -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_55f8b.dir/objects1.rsp  -o cmTC_55f8b.js 
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+
+Determining if the function strlen exists passed with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_23c2d/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_23c2d.dir/build.make CMakeFiles/cmTC_23c2d.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_23c2d.dir/CheckFunctionExists.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -DCHECK_FUNCTION_EXISTS=strlen -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_23c2d.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: warning: incompatible redeclaration of library function 'strlen' [-Wincompatible-library-redeclaration]
+  CHECK_FUNCTION_EXISTS(void);
+  ^
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS strlen
+                              ^
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: note: 'strlen' is a builtin with type 'unsigned int (const char *)'
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS strlen
+                              ^
+1 warning generated.
+Linking C executable cmTC_23c2d.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_23c2d.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -DCHECK_FUNCTION_EXISTS=strlen -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_23c2d.dir/objects1.rsp  -o cmTC_23c2d.js 
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+
+Determining if the function strlcpy exists passed with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_d16db/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_d16db.dir/build.make CMakeFiles/cmTC_d16db.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d16db.dir/CheckFunctionExists.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -DCHECK_FUNCTION_EXISTS=strlcpy -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_d16db.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: warning: incompatible redeclaration of library function 'strlcpy' [-Wincompatible-library-redeclaration]
+  CHECK_FUNCTION_EXISTS(void);
+  ^
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS strlcpy
+                              ^
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: note: 'strlcpy' is a builtin with type 'unsigned int (char *, const char *, unsigned int)'
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS strlcpy
+                              ^
+1 warning generated.
+Linking C executable cmTC_d16db.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d16db.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -DCHECK_FUNCTION_EXISTS=strlcpy -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_d16db.dir/objects1.rsp  -o cmTC_d16db.js 
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+
+Determining if the function strlcat exists passed with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_e4ce6/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_e4ce6.dir/build.make CMakeFiles/cmTC_e4ce6.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e4ce6.dir/CheckFunctionExists.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -DCHECK_FUNCTION_EXISTS=strlcat -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_e4ce6.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: warning: incompatible redeclaration of library function 'strlcat' [-Wincompatible-library-redeclaration]
+  CHECK_FUNCTION_EXISTS(void);
+  ^
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS strlcat
+                              ^
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: note: 'strlcat' is a builtin with type 'unsigned int (char *, const char *, unsigned int)'
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS strlcat
+                              ^
+1 warning generated.
+Linking C executable cmTC_e4ce6.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e4ce6.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -DCHECK_FUNCTION_EXISTS=strlcat -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_e4ce6.dir/objects1.rsp  -o cmTC_e4ce6.js 
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+
+Determining if the function strdup exists passed with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_61fe6/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_61fe6.dir/build.make CMakeFiles/cmTC_61fe6.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_61fe6.dir/CheckFunctionExists.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -DCHECK_FUNCTION_EXISTS=strdup -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_61fe6.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: warning: incompatible redeclaration of library function 'strdup' [-Wincompatible-library-redeclaration]
+  CHECK_FUNCTION_EXISTS(void);
+  ^
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS strdup
+                              ^
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: note: 'strdup' is a builtin with type 'char *(const char *)'
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS strdup
+                              ^
+1 warning generated.
+Linking C executable cmTC_61fe6.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_61fe6.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -DCHECK_FUNCTION_EXISTS=strdup -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_61fe6.dir/objects1.rsp  -o cmTC_61fe6.js 
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+
+Determining if the function strchr exists passed with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_3b1b8/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_3b1b8.dir/build.make CMakeFiles/cmTC_3b1b8.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_3b1b8.dir/CheckFunctionExists.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -DCHECK_FUNCTION_EXISTS=strchr -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_3b1b8.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: warning: incompatible redeclaration of library function 'strchr' [-Wincompatible-library-redeclaration]
+  CHECK_FUNCTION_EXISTS(void);
+  ^
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS strchr
+                              ^
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: note: 'strchr' is a builtin with type 'char *(const char *, int)'
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS strchr
+                              ^
+1 warning generated.
+Linking C executable cmTC_3b1b8.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3b1b8.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -DCHECK_FUNCTION_EXISTS=strchr -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_3b1b8.dir/objects1.rsp  -o cmTC_3b1b8.js 
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+
+Determining if the function strrchr exists passed with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_cbada/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_cbada.dir/build.make CMakeFiles/cmTC_cbada.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_cbada.dir/CheckFunctionExists.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -DCHECK_FUNCTION_EXISTS=strrchr -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_cbada.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: warning: incompatible redeclaration of library function 'strrchr' [-Wincompatible-library-redeclaration]
+  CHECK_FUNCTION_EXISTS(void);
+  ^
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS strrchr
+                              ^
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: note: 'strrchr' is a builtin with type 'char *(const char *, int)'
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS strrchr
+                              ^
+1 warning generated.
+Linking C executable cmTC_cbada.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cbada.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -DCHECK_FUNCTION_EXISTS=strrchr -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_cbada.dir/objects1.rsp  -o cmTC_cbada.js 
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+
+Determining if the function strstr exists passed with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_2ce35/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_2ce35.dir/build.make CMakeFiles/cmTC_2ce35.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_2ce35.dir/CheckFunctionExists.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -DCHECK_FUNCTION_EXISTS=strstr -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_2ce35.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: warning: incompatible redeclaration of library function 'strstr' [-Wincompatible-library-redeclaration]
+  CHECK_FUNCTION_EXISTS(void);
+  ^
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS strstr
+                              ^
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: note: 'strstr' is a builtin with type 'char *(const char *, const char *)'
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS strstr
+                              ^
+1 warning generated.
+Linking C executable cmTC_2ce35.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2ce35.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -DCHECK_FUNCTION_EXISTS=strstr -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_2ce35.dir/objects1.rsp  -o cmTC_2ce35.js 
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+
+Determining if the function strtol exists passed with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_640a8/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_640a8.dir/build.make CMakeFiles/cmTC_640a8.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_640a8.dir/CheckFunctionExists.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -DCHECK_FUNCTION_EXISTS=strtol -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_640a8.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_640a8.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_640a8.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -DCHECK_FUNCTION_EXISTS=strtol -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_640a8.dir/objects1.rsp  -o cmTC_640a8.js 
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+
+Determining if the function strtoul exists passed with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_c16e0/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_c16e0.dir/build.make CMakeFiles/cmTC_c16e0.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c16e0.dir/CheckFunctionExists.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -DCHECK_FUNCTION_EXISTS=strtoul -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_c16e0.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_c16e0.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c16e0.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -DCHECK_FUNCTION_EXISTS=strtoul -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_c16e0.dir/objects1.rsp  -o cmTC_c16e0.js 
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+
+Determining if the function strtoll exists passed with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_a0a2a/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_a0a2a.dir/build.make CMakeFiles/cmTC_a0a2a.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_a0a2a.dir/CheckFunctionExists.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -DCHECK_FUNCTION_EXISTS=strtoll -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_a0a2a.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_a0a2a.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a0a2a.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -DCHECK_FUNCTION_EXISTS=strtoll -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_a0a2a.dir/objects1.rsp  -o cmTC_a0a2a.js 
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+
+Determining if the function strtoull exists passed with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_40f4b/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_40f4b.dir/build.make CMakeFiles/cmTC_40f4b.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_40f4b.dir/CheckFunctionExists.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -DCHECK_FUNCTION_EXISTS=strtoull -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_40f4b.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_40f4b.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_40f4b.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -DCHECK_FUNCTION_EXISTS=strtoull -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_40f4b.dir/objects1.rsp  -o cmTC_40f4b.js 
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+
+Determining if the function atoi exists passed with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_7af19/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_7af19.dir/build.make CMakeFiles/cmTC_7af19.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_7af19.dir/CheckFunctionExists.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -DCHECK_FUNCTION_EXISTS=atoi -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_7af19.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_7af19.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7af19.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -DCHECK_FUNCTION_EXISTS=atoi -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_7af19.dir/objects1.rsp  -o cmTC_7af19.js 
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+
+Determining if the function atof exists passed with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_3ee44/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_3ee44.dir/build.make CMakeFiles/cmTC_3ee44.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_3ee44.dir/CheckFunctionExists.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -DCHECK_FUNCTION_EXISTS=atof -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_3ee44.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_3ee44.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3ee44.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -DCHECK_FUNCTION_EXISTS=atof -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_3ee44.dir/objects1.rsp  -o cmTC_3ee44.js 
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+
+Determining if the function strcmp exists passed with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_49245/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_49245.dir/build.make CMakeFiles/cmTC_49245.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_49245.dir/CheckFunctionExists.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -DCHECK_FUNCTION_EXISTS=strcmp -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_49245.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: warning: incompatible redeclaration of library function 'strcmp' [-Wincompatible-library-redeclaration]
+  CHECK_FUNCTION_EXISTS(void);
+  ^
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS strcmp
+                              ^
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: note: 'strcmp' is a builtin with type 'int (const char *, const char *)'
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS strcmp
+                              ^
+1 warning generated.
+Linking C executable cmTC_49245.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_49245.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -DCHECK_FUNCTION_EXISTS=strcmp -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_49245.dir/objects1.rsp  -o cmTC_49245.js 
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+
+Determining if the function strncmp exists passed with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_13223/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_13223.dir/build.make CMakeFiles/cmTC_13223.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_13223.dir/CheckFunctionExists.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -DCHECK_FUNCTION_EXISTS=strncmp -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_13223.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: warning: incompatible redeclaration of library function 'strncmp' [-Wincompatible-library-redeclaration]
+  CHECK_FUNCTION_EXISTS(void);
+  ^
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS strncmp
+                              ^
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: note: 'strncmp' is a builtin with type 'int (const char *, const char *, unsigned int)'
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS strncmp
+                              ^
+1 warning generated.
+Linking C executable cmTC_13223.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_13223.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -DCHECK_FUNCTION_EXISTS=strncmp -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_13223.dir/objects1.rsp  -o cmTC_13223.js 
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+
+Determining if the function strcasecmp exists passed with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_b9089/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_b9089.dir/build.make CMakeFiles/cmTC_b9089.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_b9089.dir/CheckFunctionExists.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -DCHECK_FUNCTION_EXISTS=strcasecmp -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_b9089.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: warning: incompatible redeclaration of library function 'strcasecmp' [-Wincompatible-library-redeclaration]
+  CHECK_FUNCTION_EXISTS(void);
+  ^
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS strcasecmp
+                              ^
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: note: 'strcasecmp' is a builtin with type 'int (const char *, const char *)'
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS strcasecmp
+                              ^
+1 warning generated.
+Linking C executable cmTC_b9089.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b9089.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -DCHECK_FUNCTION_EXISTS=strcasecmp -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_b9089.dir/objects1.rsp  -o cmTC_b9089.js 
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+
+Determining if the function strncasecmp exists passed with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_14fb7/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_14fb7.dir/build.make CMakeFiles/cmTC_14fb7.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_14fb7.dir/CheckFunctionExists.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -DCHECK_FUNCTION_EXISTS=strncasecmp -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_14fb7.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: warning: incompatible redeclaration of library function 'strncasecmp' [-Wincompatible-library-redeclaration]
+  CHECK_FUNCTION_EXISTS(void);
+  ^
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS strncasecmp
+                              ^
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: note: 'strncasecmp' is a builtin with type 'int (const char *, const char *, unsigned int)'
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS strncasecmp
+                              ^
+1 warning generated.
+Linking C executable cmTC_14fb7.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_14fb7.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -DCHECK_FUNCTION_EXISTS=strncasecmp -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_14fb7.dir/objects1.rsp  -o cmTC_14fb7.js 
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+
+Determining if the function vsscanf exists passed with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_423ab/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_423ab.dir/build.make CMakeFiles/cmTC_423ab.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_423ab.dir/CheckFunctionExists.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -DCHECK_FUNCTION_EXISTS=vsscanf -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_423ab.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: warning: incompatible redeclaration of library function 'vsscanf' [-Wincompatible-library-redeclaration]
+  CHECK_FUNCTION_EXISTS(void);
+  ^
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS vsscanf
+                              ^
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: note: 'vsscanf' is a builtin with type 'int (const char *restrict, const char *restrict, int *)'
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS vsscanf
+                              ^
+1 warning generated.
+Linking C executable cmTC_423ab.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_423ab.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -DCHECK_FUNCTION_EXISTS=vsscanf -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_423ab.dir/objects1.rsp  -o cmTC_423ab.js 
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+
+Determining if the function vsnprintf exists passed with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_acf45/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_acf45.dir/build.make CMakeFiles/cmTC_acf45.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_acf45.dir/CheckFunctionExists.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -DCHECK_FUNCTION_EXISTS=vsnprintf -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_acf45.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: warning: incompatible redeclaration of library function 'vsnprintf' [-Wincompatible-library-redeclaration]
+  CHECK_FUNCTION_EXISTS(void);
+  ^
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS vsnprintf
+                              ^
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: note: 'vsnprintf' is a builtin with type 'int (char *, unsigned int, const char *, int *)'
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS vsnprintf
+                              ^
+1 warning generated.
+Linking C executable cmTC_acf45.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_acf45.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -DCHECK_FUNCTION_EXISTS=vsnprintf -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_acf45.dir/objects1.rsp  -o cmTC_acf45.js 
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+
+Determining if the function fseeko exists passed with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_08e4b/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_08e4b.dir/build.make CMakeFiles/cmTC_08e4b.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_08e4b.dir/CheckFunctionExists.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -DCHECK_FUNCTION_EXISTS=fseeko -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_08e4b.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_08e4b.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_08e4b.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -DCHECK_FUNCTION_EXISTS=fseeko -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_08e4b.dir/objects1.rsp  -o cmTC_08e4b.js 
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+
+Determining if the function fseeko64 exists passed with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_6bca2/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_6bca2.dir/build.make CMakeFiles/cmTC_6bca2.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_6bca2.dir/CheckFunctionExists.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -DCHECK_FUNCTION_EXISTS=fseeko64 -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_6bca2.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_6bca2.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6bca2.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -DCHECK_FUNCTION_EXISTS=fseeko64 -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_6bca2.dir/objects1.rsp  -o cmTC_6bca2.js 
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+
+Determining if the function sigaction exists passed with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_b8dcf/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_b8dcf.dir/build.make CMakeFiles/cmTC_b8dcf.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_b8dcf.dir/CheckFunctionExists.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -DCHECK_FUNCTION_EXISTS=sigaction -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_b8dcf.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_b8dcf.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b8dcf.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -DCHECK_FUNCTION_EXISTS=sigaction -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_b8dcf.dir/objects1.rsp  -o cmTC_b8dcf.js 
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+
+Determining if the function nanosleep exists passed with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_4cf7f/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_4cf7f.dir/build.make CMakeFiles/cmTC_4cf7f.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_4cf7f.dir/CheckFunctionExists.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -DCHECK_FUNCTION_EXISTS=nanosleep -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_4cf7f.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_4cf7f.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4cf7f.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -DCHECK_FUNCTION_EXISTS=nanosleep -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_4cf7f.dir/objects1.rsp  -o cmTC_4cf7f.js 
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+
+Determining if the function sysconf exists passed with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_65dbf/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_65dbf.dir/build.make CMakeFiles/cmTC_65dbf.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_65dbf.dir/CheckFunctionExists.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -DCHECK_FUNCTION_EXISTS=sysconf -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_65dbf.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_65dbf.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_65dbf.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -DCHECK_FUNCTION_EXISTS=sysconf -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_65dbf.dir/objects1.rsp  -o cmTC_65dbf.js 
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+
+Determining if the function pow exists in the m passed with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_1f9df/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_1f9df.dir/build.make CMakeFiles/cmTC_1f9df.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_1f9df.dir/CheckFunctionExists.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -DCHECK_FUNCTION_EXISTS=pow -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_1f9df.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: warning: incompatible redeclaration of library function 'pow' [-Wincompatible-library-redeclaration]
+  CHECK_FUNCTION_EXISTS(void);
+  ^
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS pow
+                              ^
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: note: 'pow' is a builtin with type 'double (double, double)'
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS pow
+                              ^
+1 warning generated.
+Linking C executable cmTC_1f9df.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1f9df.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -DCHECK_FUNCTION_EXISTS=pow -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_1f9df.dir/objects1.rsp  -o cmTC_1f9df.js @CMakeFiles/cmTC_1f9df.dir/linklibs.rsp
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+
+Determining if the function atan exists passed with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_de0e6/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_de0e6.dir/build.make CMakeFiles/cmTC_de0e6.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_de0e6.dir/CheckFunctionExists.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -DCHECK_FUNCTION_EXISTS=atan -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_de0e6.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: warning: incompatible redeclaration of library function 'atan' [-Wincompatible-library-redeclaration]
+  CHECK_FUNCTION_EXISTS(void);
+  ^
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS atan
+                              ^
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: note: 'atan' is a builtin with type 'double (double)'
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS atan
+                              ^
+1 warning generated.
+Linking C executable cmTC_de0e6.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_de0e6.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -DCHECK_FUNCTION_EXISTS=atan -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_de0e6.dir/objects1.rsp  -o cmTC_de0e6.js @CMakeFiles/cmTC_de0e6.dir/linklibs.rsp
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+
+Determining if the function atan2 exists passed with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_5e02c/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_5e02c.dir/build.make CMakeFiles/cmTC_5e02c.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_5e02c.dir/CheckFunctionExists.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -DCHECK_FUNCTION_EXISTS=atan2 -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_5e02c.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: warning: incompatible redeclaration of library function 'atan2' [-Wincompatible-library-redeclaration]
+  CHECK_FUNCTION_EXISTS(void);
+  ^
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS atan2
+                              ^
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: note: 'atan2' is a builtin with type 'double (double, double)'
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS atan2
+                              ^
+1 warning generated.
+Linking C executable cmTC_5e02c.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5e02c.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -DCHECK_FUNCTION_EXISTS=atan2 -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_5e02c.dir/objects1.rsp  -o cmTC_5e02c.js @CMakeFiles/cmTC_5e02c.dir/linklibs.rsp
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+
+Determining if the function ceil exists passed with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_3e146/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_3e146.dir/build.make CMakeFiles/cmTC_3e146.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_3e146.dir/CheckFunctionExists.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -DCHECK_FUNCTION_EXISTS=ceil -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_3e146.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: warning: incompatible redeclaration of library function 'ceil' [-Wincompatible-library-redeclaration]
+  CHECK_FUNCTION_EXISTS(void);
+  ^
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS ceil
+                              ^
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: note: 'ceil' is a builtin with type 'double (double)'
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS ceil
+                              ^
+1 warning generated.
+Linking C executable cmTC_3e146.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3e146.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -DCHECK_FUNCTION_EXISTS=ceil -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_3e146.dir/objects1.rsp  -o cmTC_3e146.js @CMakeFiles/cmTC_3e146.dir/linklibs.rsp
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+
+Determining if the function copysign exists passed with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_4a11e/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_4a11e.dir/build.make CMakeFiles/cmTC_4a11e.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_4a11e.dir/CheckFunctionExists.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -DCHECK_FUNCTION_EXISTS=copysign -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_4a11e.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: warning: incompatible redeclaration of library function 'copysign' [-Wincompatible-library-redeclaration]
+  CHECK_FUNCTION_EXISTS(void);
+  ^
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS copysign
+                              ^
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: note: 'copysign' is a builtin with type 'double (double, double)'
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS copysign
+                              ^
+1 warning generated.
+Linking C executable cmTC_4a11e.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4a11e.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -DCHECK_FUNCTION_EXISTS=copysign -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_4a11e.dir/objects1.rsp  -o cmTC_4a11e.js @CMakeFiles/cmTC_4a11e.dir/linklibs.rsp
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+
+Determining if the function cos exists passed with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_668c8/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_668c8.dir/build.make CMakeFiles/cmTC_668c8.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_668c8.dir/CheckFunctionExists.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -DCHECK_FUNCTION_EXISTS=cos -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_668c8.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: warning: incompatible redeclaration of library function 'cos' [-Wincompatible-library-redeclaration]
+  CHECK_FUNCTION_EXISTS(void);
+  ^
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS cos
+                              ^
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: note: 'cos' is a builtin with type 'double (double)'
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS cos
+                              ^
+1 warning generated.
+Linking C executable cmTC_668c8.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_668c8.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -DCHECK_FUNCTION_EXISTS=cos -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_668c8.dir/objects1.rsp  -o cmTC_668c8.js @CMakeFiles/cmTC_668c8.dir/linklibs.rsp
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+
+Determining if the function cosf exists passed with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_2856a/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_2856a.dir/build.make CMakeFiles/cmTC_2856a.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_2856a.dir/CheckFunctionExists.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -DCHECK_FUNCTION_EXISTS=cosf -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_2856a.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: warning: incompatible redeclaration of library function 'cosf' [-Wincompatible-library-redeclaration]
+  CHECK_FUNCTION_EXISTS(void);
+  ^
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS cosf
+                              ^
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: note: 'cosf' is a builtin with type 'float (float)'
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS cosf
+                              ^
+1 warning generated.
+Linking C executable cmTC_2856a.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2856a.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -DCHECK_FUNCTION_EXISTS=cosf -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_2856a.dir/objects1.rsp  -o cmTC_2856a.js @CMakeFiles/cmTC_2856a.dir/linklibs.rsp
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+
+Determining if the function fabs exists passed with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_79793/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_79793.dir/build.make CMakeFiles/cmTC_79793.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_79793.dir/CheckFunctionExists.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -DCHECK_FUNCTION_EXISTS=fabs -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_79793.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: warning: incompatible redeclaration of library function 'fabs' [-Wincompatible-library-redeclaration]
+  CHECK_FUNCTION_EXISTS(void);
+  ^
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS fabs
+                              ^
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: note: 'fabs' is a builtin with type 'double (double)'
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS fabs
+                              ^
+1 warning generated.
+Linking C executable cmTC_79793.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_79793.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -DCHECK_FUNCTION_EXISTS=fabs -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_79793.dir/objects1.rsp  -o cmTC_79793.js @CMakeFiles/cmTC_79793.dir/linklibs.rsp
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+
+Determining if the function floor exists passed with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_25a9d/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_25a9d.dir/build.make CMakeFiles/cmTC_25a9d.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_25a9d.dir/CheckFunctionExists.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -DCHECK_FUNCTION_EXISTS=floor -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_25a9d.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: warning: incompatible redeclaration of library function 'floor' [-Wincompatible-library-redeclaration]
+  CHECK_FUNCTION_EXISTS(void);
+  ^
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS floor
+                              ^
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: note: 'floor' is a builtin with type 'double (double)'
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS floor
+                              ^
+1 warning generated.
+Linking C executable cmTC_25a9d.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_25a9d.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -DCHECK_FUNCTION_EXISTS=floor -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_25a9d.dir/objects1.rsp  -o cmTC_25a9d.js @CMakeFiles/cmTC_25a9d.dir/linklibs.rsp
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+
+Determining if the function log exists passed with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_9fe63/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_9fe63.dir/build.make CMakeFiles/cmTC_9fe63.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_9fe63.dir/CheckFunctionExists.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -DCHECK_FUNCTION_EXISTS=log -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_9fe63.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: warning: incompatible redeclaration of library function 'log' [-Wincompatible-library-redeclaration]
+  CHECK_FUNCTION_EXISTS(void);
+  ^
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS log
+                              ^
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: note: 'log' is a builtin with type 'double (double)'
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS log
+                              ^
+1 warning generated.
+Linking C executable cmTC_9fe63.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9fe63.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -DCHECK_FUNCTION_EXISTS=log -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_9fe63.dir/objects1.rsp  -o cmTC_9fe63.js @CMakeFiles/cmTC_9fe63.dir/linklibs.rsp
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+
+Determining if the function pow exists passed with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_7bc06/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_7bc06.dir/build.make CMakeFiles/cmTC_7bc06.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_7bc06.dir/CheckFunctionExists.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -DCHECK_FUNCTION_EXISTS=pow -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_7bc06.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: warning: incompatible redeclaration of library function 'pow' [-Wincompatible-library-redeclaration]
+  CHECK_FUNCTION_EXISTS(void);
+  ^
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS pow
+                              ^
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: note: 'pow' is a builtin with type 'double (double, double)'
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS pow
+                              ^
+1 warning generated.
+Linking C executable cmTC_7bc06.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7bc06.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -DCHECK_FUNCTION_EXISTS=pow -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_7bc06.dir/objects1.rsp  -o cmTC_7bc06.js @CMakeFiles/cmTC_7bc06.dir/linklibs.rsp
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+
+Determining if the function scalbn exists passed with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_261fb/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_261fb.dir/build.make CMakeFiles/cmTC_261fb.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_261fb.dir/CheckFunctionExists.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -DCHECK_FUNCTION_EXISTS=scalbn -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_261fb.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: warning: incompatible redeclaration of library function 'scalbn' [-Wincompatible-library-redeclaration]
+  CHECK_FUNCTION_EXISTS(void);
+  ^
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS scalbn
+                              ^
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: note: 'scalbn' is a builtin with type 'double (double, int)'
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS scalbn
+                              ^
+1 warning generated.
+Linking C executable cmTC_261fb.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_261fb.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -DCHECK_FUNCTION_EXISTS=scalbn -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_261fb.dir/objects1.rsp  -o cmTC_261fb.js @CMakeFiles/cmTC_261fb.dir/linklibs.rsp
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+
+Determining if the function sin exists passed with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_15b85/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_15b85.dir/build.make CMakeFiles/cmTC_15b85.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_15b85.dir/CheckFunctionExists.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -DCHECK_FUNCTION_EXISTS=sin -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_15b85.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: warning: incompatible redeclaration of library function 'sin' [-Wincompatible-library-redeclaration]
+  CHECK_FUNCTION_EXISTS(void);
+  ^
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS sin
+                              ^
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: note: 'sin' is a builtin with type 'double (double)'
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS sin
+                              ^
+1 warning generated.
+Linking C executable cmTC_15b85.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_15b85.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -DCHECK_FUNCTION_EXISTS=sin -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_15b85.dir/objects1.rsp  -o cmTC_15b85.js @CMakeFiles/cmTC_15b85.dir/linklibs.rsp
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+
+Determining if the function sinf exists passed with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_adbcc/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_adbcc.dir/build.make CMakeFiles/cmTC_adbcc.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_adbcc.dir/CheckFunctionExists.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -DCHECK_FUNCTION_EXISTS=sinf -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_adbcc.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: warning: incompatible redeclaration of library function 'sinf' [-Wincompatible-library-redeclaration]
+  CHECK_FUNCTION_EXISTS(void);
+  ^
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS sinf
+                              ^
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: note: 'sinf' is a builtin with type 'float (float)'
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS sinf
+                              ^
+1 warning generated.
+Linking C executable cmTC_adbcc.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_adbcc.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -DCHECK_FUNCTION_EXISTS=sinf -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_adbcc.dir/objects1.rsp  -o cmTC_adbcc.js @CMakeFiles/cmTC_adbcc.dir/linklibs.rsp
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+
+Determining if the function sqrt exists passed with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_2f284/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_2f284.dir/build.make CMakeFiles/cmTC_2f284.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_2f284.dir/CheckFunctionExists.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -DCHECK_FUNCTION_EXISTS=sqrt -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_2f284.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: warning: incompatible redeclaration of library function 'sqrt' [-Wincompatible-library-redeclaration]
+  CHECK_FUNCTION_EXISTS(void);
+  ^
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS sqrt
+                              ^
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: note: 'sqrt' is a builtin with type 'double (double)'
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS sqrt
+                              ^
+1 warning generated.
+Linking C executable cmTC_2f284.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2f284.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -DCHECK_FUNCTION_EXISTS=sqrt -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_2f284.dir/objects1.rsp  -o cmTC_2f284.js @CMakeFiles/cmTC_2f284.dir/linklibs.rsp
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+
+Determining if the function sqrtf exists passed with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_094e7/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_094e7.dir/build.make CMakeFiles/cmTC_094e7.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_094e7.dir/CheckFunctionExists.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -DCHECK_FUNCTION_EXISTS=sqrtf -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_094e7.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: warning: incompatible redeclaration of library function 'sqrtf' [-Wincompatible-library-redeclaration]
+  CHECK_FUNCTION_EXISTS(void);
+  ^
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS sqrtf
+                              ^
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: note: 'sqrtf' is a builtin with type 'float (float)'
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS sqrtf
+                              ^
+1 warning generated.
+Linking C executable cmTC_094e7.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_094e7.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -DCHECK_FUNCTION_EXISTS=sqrtf -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_094e7.dir/objects1.rsp  -o cmTC_094e7.js @CMakeFiles/cmTC_094e7.dir/linklibs.rsp
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+
+Determining if the function tan exists passed with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_78ce8/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_78ce8.dir/build.make CMakeFiles/cmTC_78ce8.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_78ce8.dir/CheckFunctionExists.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -DCHECK_FUNCTION_EXISTS=tan -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_78ce8.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: warning: incompatible redeclaration of library function 'tan' [-Wincompatible-library-redeclaration]
+  CHECK_FUNCTION_EXISTS(void);
+  ^
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS tan
+                              ^
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: note: 'tan' is a builtin with type 'double (double)'
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS tan
+                              ^
+1 warning generated.
+Linking C executable cmTC_78ce8.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_78ce8.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -DCHECK_FUNCTION_EXISTS=tan -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_78ce8.dir/objects1.rsp  -o cmTC_78ce8.js @CMakeFiles/cmTC_78ce8.dir/linklibs.rsp
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+
+Determining if the function tanf exists passed with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_a9fa3/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_a9fa3.dir/build.make CMakeFiles/cmTC_a9fa3.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_a9fa3.dir/CheckFunctionExists.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -DCHECK_FUNCTION_EXISTS=tanf -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_a9fa3.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: warning: incompatible redeclaration of library function 'tanf' [-Wincompatible-library-redeclaration]
+  CHECK_FUNCTION_EXISTS(void);
+  ^
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS tanf
+                              ^
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: note: 'tanf' is a builtin with type 'float (float)'
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS tanf
+                              ^
+1 warning generated.
+Linking C executable cmTC_a9fa3.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a9fa3.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -DCHECK_FUNCTION_EXISTS=tanf -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_a9fa3.dir/objects1.rsp  -o cmTC_a9fa3.js @CMakeFiles/cmTC_a9fa3.dir/linklibs.rsp
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+
+Determining if the function acos exists passed with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_78daa/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_78daa.dir/build.make CMakeFiles/cmTC_78daa.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_78daa.dir/CheckFunctionExists.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -DCHECK_FUNCTION_EXISTS=acos -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_78daa.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: warning: incompatible redeclaration of library function 'acos' [-Wincompatible-library-redeclaration]
+  CHECK_FUNCTION_EXISTS(void);
+  ^
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS acos
+                              ^
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: note: 'acos' is a builtin with type 'double (double)'
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS acos
+                              ^
+1 warning generated.
+Linking C executable cmTC_78daa.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_78daa.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -DCHECK_FUNCTION_EXISTS=acos -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_78daa.dir/objects1.rsp  -o cmTC_78daa.js @CMakeFiles/cmTC_78daa.dir/linklibs.rsp
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+
+Determining if the function asin exists passed with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_f7c95/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_f7c95.dir/build.make CMakeFiles/cmTC_f7c95.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f7c95.dir/CheckFunctionExists.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -DCHECK_FUNCTION_EXISTS=asin -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_f7c95.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: warning: incompatible redeclaration of library function 'asin' [-Wincompatible-library-redeclaration]
+  CHECK_FUNCTION_EXISTS(void);
+  ^
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS asin
+                              ^
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: note: 'asin' is a builtin with type 'double (double)'
+<command line>:5:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS asin
+                              ^
+1 warning generated.
+Linking C executable cmTC_f7c95.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f7c95.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -DCHECK_FUNCTION_EXISTS=asin -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_f7c95.dir/objects1.rsp  -o cmTC_f7c95.js @CMakeFiles/cmTC_f7c95.dir/linklibs.rsp
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+
+Determining if the function iconv_open exists in the iconv passed with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_76613/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_76613.dir/build.make CMakeFiles/cmTC_76613.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_76613.dir/CheckFunctionExists.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -DCHECK_FUNCTION_EXISTS=iconv_open -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_76613.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_76613.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_76613.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -DCHECK_FUNCTION_EXISTS=iconv_open -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_76613.dir/objects1.rsp  -o cmTC_76613.js @CMakeFiles/cmTC_76613.dir/linklibs.rsp
+WARNING:root:emcc: cannot find library "iconv"
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+
+Determining if the include file alloca.h exists passed with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_fde78/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_fde78.dir/build.make CMakeFiles/cmTC_fde78.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_fde78.dir/CheckIncludeFile.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_fde78.dir/CheckIncludeFile.c.o   -c /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_fde78.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fde78.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_fde78.dir/objects1.rsp  -o cmTC_fde78.js 
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+
+Performing C SOURCE FILE Test HAVE_SA_SIGACTION succeeded with the following output:
+Change Dir: /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_6ea33/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_6ea33.dir/build.make CMakeFiles/cmTC_6ea33.dir/build
+gmake[1]: Entering directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_6ea33.dir/src.c.o
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc   -g -O3 -DHAVE_SA_SIGACTION -s ERROR_ON_UNDEFINED_SYMBOLS=1   -o CMakeFiles/cmTC_6ea33.dir/src.c.o   -c /home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_6ea33.js
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6ea33.dir/link.txt --verbose=1
+/home/ost/programs/emsdk/emscripten/1.37.14/emcc -g -O3 -DHAVE_SA_SIGACTION -s ERROR_ON_UNDEFINED_SYMBOLS=1    @CMakeFiles/cmTC_6ea33.dir/objects1.rsp  -o cmTC_6ea33.js 
+gmake[1]: Leaving directory '/home/ost/git/web-game/build/js/CMakeFiles/CMakeTmp'
+
+Source file was:
+
+#include <signal.h>
+
+int main()
+{
+   (void)sizeof(((struct sigaction *)0)->sa_sigaction);
+   return 0;
+}
+

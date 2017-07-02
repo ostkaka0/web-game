@@ -1,0 +1,1 @@
+/home/ost/programs/emsdk/emscripten/1.37.14/em++    -s USE_SDL=2 @CMakeFiles/web-game.dir/objects1.rsp  -o web-game.js @CMakeFiles/web-game.dir/linklibs.rsp

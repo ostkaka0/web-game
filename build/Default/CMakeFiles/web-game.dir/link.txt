@@ -1,0 +1,1 @@
+/usr/lib64/ccache/clang++    -rdynamic CMakeFiles/web-game.dir/src/main.cpp.o  -o web-game -Wl,-rpath,/home/ost/git/web-game/build/Default/deps/SDL2 deps/SDL2/libSDL2-2.0.so.0.4.1 -lm -ldl -ldbus-1 -Wl,--no-undefined -pthread 

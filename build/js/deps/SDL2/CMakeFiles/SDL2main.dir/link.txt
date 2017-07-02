@@ -1,0 +1,1 @@
+/home/ost/programs/emsdk/emscripten/1.37.14/emar rc libSDL2main.a  @CMakeFiles/SDL2main.dir/objects1.rsp
