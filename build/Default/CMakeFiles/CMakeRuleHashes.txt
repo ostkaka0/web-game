@@ -1,8 +1,0 @@
-# Hashes of file build rules.
-9ed9f4cf6943787a7d6ee04b9bfafb76 deps/SDL2/CMakeFiles/uninstall
-374ee3b0d5c842080edad8ad72ccf93f deps/SDL2/wayland-generated-protocols/pointer-constraints-unstable-v1-client-protocol.h
-c343cd555c4df865e3239329dbf18355 deps/SDL2/wayland-generated-protocols/pointer-constraints-unstable-v1-protocol.c
-075431f92d9b3df06ea85a3f55701ce8 deps/SDL2/wayland-generated-protocols/relative-pointer-unstable-v1-client-protocol.h
-424959f2d40aec613d5fad3099709965 deps/SDL2/wayland-generated-protocols/relative-pointer-unstable-v1-protocol.c
-0da685c245f91fda2a56c1839d23b863 deps/SDL2/wayland-generated-protocols/wayland-client-protocol.h
-41a79c1ca505fc3d3c8d839238ce4d46 deps/SDL2/wayland-generated-protocols/wayland-protocol.c
