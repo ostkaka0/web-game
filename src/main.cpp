@@ -1,3 +1,7 @@
+#include "core/common.h"
+#include "entity_manager.h"
+#include "component/name.h"
+
 #include <SDL2/SDL.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -41,6 +45,11 @@ int main(int argc, char* argv[]) {
 }
 
 void init() {
+    ENTITY_MANAGER_INIT(Entity_Name, Entity_Name2, Entity_Name3);
+    entity_add(0, Entity_Name{ "HALLÅ DÄR" });
+    entity_add(0, Entity_Name2{ "HALLÅ DÄR" });
+    entity_remove<Entity_Name>(0);
+    entity_remove<Entity_Name2>(0);
     SDL_Init(SDL_INIT_VIDEO);
     window = SDL_CreateWindow(
         "An SDL2 window",
