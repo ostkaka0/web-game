@@ -4,106 +4,118 @@
 
 #include <stdarg.h>
 
+// Component info from type by template
 template<typename T>
-struct entity {
+struct g_component_info {
     static u32 id;
     static Array<T> data;
 };
 template<typename T>
-u32 entity<T>::id = -1;
+u32 g_component_info<T>::id = -1;
 template<typename T>
-Array<T> entity<T>::data = {0, 0, 0};
+Array<T> g_component_info<T>::data = {0, 0, 0};
 
-/*#define _ENTITY_MANAGER_INIT(COMPONENT) \
-    entity<COMPONENT>::data = {0, 0, 0};\
-    entity<COMPONENT>::id = __COUNTER__ - _entity_manager_first_count;\
-    entity_callbacks[entity<COMPONENT>::id] = _##COMPONENT##_entity_callbacks;\
-    assert(entity<COMPONENT>::id < 64);
+// Component info from id
+struct _Component { };
+struct {
+    void(_Component::*deinit)(u32 id);
+} g_component_callbacks[64];
+size_t g_component_sizes[64];
+Array<u8>* g_component_data[64];
+int g_num_components;
 
-#define _ENTITY_MANAGER_INIT(first, second, ...) \
-    _ENTITY_MANAGER_INIT(first);\
-    _ENTITY_MANAGER_INIT(second, __VA_ARGS__);*/
-
-#define ENTITY_MANAGER_INIT(...) \
-    memset(entity_callbacks, 0, 64 * sizeof(*entity_callbacks));\
-    const u32 _entity_manager_first_count = __COUNTER__ + 1;\
-    _ENTITY_MANAGER_INIT<__VA_ARGS__>();
-
-static u32 _entity_manager_component_counter = 0;
+Array<u64> g_entity_flags;
+u64 g_entity_free_head; // Keep track of removed entities, stored in entity_flags as linked list of indices
 
 
-
-Array<u64> entity_flags = {0, 0, 0};
-
-
-struct Component {
-    void deinit() {};
-};
-
-struct Entity_Callbacks {
-    void(Component::*deinit)(u32 id);
-};
-
-Entity_Callbacks entity_callbacks[64];
-struct { size_t size; } Component_info[64];
-Array<u8>* Component_data[64];
-
-template<typename First>
-void _ENTITY_MANAGER_INIT() {
-    entity<First>::data = {0, 0, 0};
-    entity<First>::id = _entity_manager_component_counter++;
-    Component_info[entity<First>::id] = { sizeof(First) };
-    entity_callbacks[entity<First>::id].deinit = (void(Component::*)(u32))&First::deinit;//_##COMPONENT##_entity_callbacks;
-    Component_data[entity<First>::id] = (Array<u8>*)(&entity<First>::data);
-    assert(entity<First>::id < 64);
+template<typename Component>
+void _entity_manager_init() {
+    g_component_info<Component>::data = {0, 0, 0};
+    g_component_info<Component>::id = g_num_components++;
+    g_component_sizes[g_component_info<Component>::id] = { sizeof(Component) };
+    g_component_callbacks[g_component_info<Component>::id].deinit = (void(_Component::*)(u32))&Component::deinit;//_##COMPONENT##_entity_callbacks;
+    g_component_info<Component>::data.init();
+    g_component_data[g_component_info<Component>::id] = (Array<u8>*)(&g_component_info<Component>::data);
+    assert(g_component_info<Component>::id < 64);
 }
 
 template<typename First, typename Second, typename... Rest>
-void _ENTITY_MANAGER_INIT() {
-    _ENTITY_MANAGER_INIT<First>();
-    _ENTITY_MANAGER_INIT<Second, Rest...>();
+void _entity_manager_init() {
+    _entity_manager_init<First>();
+    _entity_manager_init<Second, Rest...>();
 }
 
-void entity_manager_deinit();
+template<typename... Args>
+void entity_manager_init() {
+    g_num_components = 0;
+    g_entity_flags.init();
+    g_entity_free_head = -1;
 
-
-u32 entity_create() {
-    assert(0);
+    _entity_manager_init<Args...>();
 }
 
+void entity_manager_deinit() {
+    g_entity_flags.destroy();
+    for (int i = 0; i < g_num_components; i++) {
+        g_component_data[i]->destroy();
+    }
+}
+
+// Get component by component-type
 template<typename T>
 T* entity_get(u32 id) {
-    return &entity<T>::data[id];
+    return &g_component_info<T>::data[id];
 }
 
-Component* entity_get(u32 id, int component_id) {
-    return (Component*)(*Component_data[component_id])[id * Component_info[component_id].size];
+// Get component by component-id
+void* entity_get(u32 id, int component_id) {
+    return (_Component*)(*g_component_data[component_id])[id * g_component_sizes[component_id]];
+}
+
+u32 entity_create() {
+    u32 id;
+    if (g_entity_free_head == -1) {
+        id = g_entity_flags.length();
+        g_entity_flags.push(0);
+    } else {
+        // Pop linked list
+        id = (u32)g_entity_free_head;
+        g_entity_free_head = g_entity_flags[g_entity_free_head];
+    }
+    g_entity_flags[id] = 0;
+    return id;
 }
 
 void entity_destroy(u32 id) {
-    for (int i = 0; i < _entity_manager_component_counter; i++) {
-        if ((entity_flags[id] >> i) & 1 && entity_callbacks[i].deinit) {
-            Component* this_ptr = entity_get(id, i);
-            (this_ptr->*entity_callbacks[id].deinit)(id);//entity_callbacks[id].deinit(NULL, id);
+    for (int i = 0; i < g_num_components; i++) {
+        if ((g_entity_flags[id] >> i) & 1 && g_component_callbacks[i].deinit) {
+            _Component* this_ptr = (_Component*)entity_get(id, i);
+            (this_ptr->*g_component_callbacks[id].deinit)(id);//entity_callbacks[id].deinit(NULL, id);
         }
     }
-    assert(0);
+    // Push linked list
+    g_entity_flags[id] = g_entity_free_head;
+    g_entity_free_head = (u64)id;
 }
 
 template<typename T>
-T entity_add(u32 id, T component) {
-    if (entity<T>::data.length() <= id)
-        entity<T>::data.resize(id + 1);
+T component_add(u32 id, T component) {
+    assert(g_entity_flags.length() > id);
+    assert((g_entity_flags[id] & ((u64)1 << g_component_info<T>::id)) == 0);
 
-    entity<T>::data[id] = component;
+    g_entity_flags[id] |= ((u64)1 << g_component_info<T>::id);
+
+    if (g_component_info<T>::data.length() <= id)
+        g_component_info<T>::data.resize(id + 1);
+    g_component_info<T>::data[id] = component;
     return component;
 }
 
 template<typename T>
-void entity_remove(u32 id) {
-    /*assert (entity_flags.length() > id)
-    assert(entity_flags[id] & ((u64)1 << entity<T>::id));
-    entity_flags[id] &= ~((u64)1 << entity<T>::id);*/
+void component_remove(u32 id) {
+    assert(g_entity_flags.length() > id);
+    assert(g_entity_flags[id] & ((u64)1 << g_component_info<T>::id));
+    g_entity_flags[id] &= ~((u64)1 << g_component_info<T>::id);
     entity_get<T>(id)->deinit(id);
 }
 
