@@ -49,16 +49,20 @@ int main(int argc, char* argv[]) {
 }
 
 void init() {
-    entity_manager_init<Component_Name, Component_Pos, Component_Movement>();
+    entity_manager_init<Component_Name, Component_Pos, Component_Movement, Component_Sprite>();
     entity_player = entity_create();
     entity_player_create(entity_player);
+    for (int i = 0; i < 100000; i++) {
+        u32 entity = entity_create();
+        entity_player_create(entity, {800 + glm::cos((double)i*59)*700.0, -450 + (double)-glm::sin(((double)i)*117.)*400}, { i%256, (i/256)%256, (i/256/256)%256, 1 });
+    }
     SDL_Init(SDL_INIT_VIDEO);
     window = SDL_CreateWindow(
         "An SDL2 window",
         SDL_WINDOWPOS_UNDEFINED,
         SDL_WINDOWPOS_UNDEFINED,
-        640,
-        480,
+        1600,
+        900,
         SDL_WINDOW_OPENGL
     );
 
@@ -139,12 +143,7 @@ void render(double dt) {
     SDL_SetRenderDrawColor( renderer, 0x44, 0x44, 0x44, 0xFF );
     SDL_RenderClear(renderer);
 
-    glm::dvec2 pos = component_get<Component_Pos>(entity_player)->pos;
-
-    // Draw rect
-    SDL_Rect fillRect = { (int)pos.x, -(int)pos.y, 50, 50 };
-    SDL_SetRenderDrawColor( renderer, 0xFF, 0xFF, 0x00, 0xFF );
-    SDL_RenderFillRect( renderer, &fillRect );
+    component_sprite_render(renderer);
 
     // Finish
     SDL_RenderPresent( renderer );
