@@ -240,7 +240,7 @@ size_t Array<T>::binary_erase(T val) {
     assert(this->length());
     size_t index = this->binary_search<compare>(val);
     assert(this->data[index] == val);
-    this->erase(index, val);
+    this->splice(index, 1);
     return index;
 }
 

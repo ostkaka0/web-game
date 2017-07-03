@@ -1,6 +1,9 @@
 project(web-game)
 cmake_minimum_required(VERSION 2.8)
-SET(CMAKE_CXX_FLAGS "-std=c++14")
+SET(CMAKE_CXX_FLAGS "-std=c++1y")
+set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
 
 #find_package(SDL2 REQUIRED)
 add_subdirectory(deps/SDL2)

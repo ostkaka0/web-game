@@ -1,6 +1,9 @@
 #include "core/common.h"
 #include "entity_manager.h"
 #include "component/name.h"
+#include "component/pos.h"
+#include "component/movement.h"
+#include "entity/player.h"
 
 #include <SDL2/SDL.h>
 #include <stdio.h>
@@ -18,6 +21,7 @@ void render(double dt); // called by update()
 SDL_Window *window;
 SDL_Renderer* renderer;
 bool quit = false;
+u32 entity_player;
 
 int main(int argc, char* argv[]) {
     printf("!!!\n");
@@ -45,12 +49,9 @@ int main(int argc, char* argv[]) {
 }
 
 void init() {
-    entity_manager_init<Entity_Name, Entity_Name2, Entity_Name3>();
-    u32 entity = entity_create();
-    component_add(entity, Entity_Name{ "HALLÅ DÄR" });
-    component_add(entity, Entity_Name2{ "HALLÅ DÄR" });
-    component_remove<Entity_Name>(entity);
-    component_remove<Entity_Name2>(entity);
+    entity_manager_init<Component_Name, Component_Pos, Component_Movement>();
+    entity_player = entity_create();
+    entity_player_create(entity_player);
     SDL_Init(SDL_INIT_VIDEO);
     window = SDL_CreateWindow(
         "An SDL2 window",
@@ -85,8 +86,38 @@ void update() {
             quit = true;
             break;
         case SDL_KEYDOWN:
-            if (event.key.keysym.sym == SDLK_ESCAPE)
-            quit = true;
+            if (event.key.keysym.sym == SDLK_ESCAPE) quit = true;
+            switch(event.key.keysym.sym) {
+            case SDLK_w:
+                component_get<Component_Movement>(entity_player)->dir |= MOVEMENT_UP;
+                break;
+            case SDLK_a:
+                component_get<Component_Movement>(entity_player)->dir |= MOVEMENT_LEFT;
+                break;
+            case SDLK_s:
+                component_get<Component_Movement>(entity_player)->dir |= MOVEMENT_DOWN;
+                break;
+            case SDLK_d:
+                component_get<Component_Movement>(entity_player)->dir |= MOVEMENT_RIGHT;
+                break;
+            }
+
+            break;
+        case SDL_KEYUP:
+            switch(event.key.keysym.sym) {
+            case SDLK_w:
+                component_get<Component_Movement>(entity_player)->dir &= ~MOVEMENT_UP;
+                break;
+            case SDLK_a:
+                component_get<Component_Movement>(entity_player)->dir &= ~MOVEMENT_LEFT;
+                break;
+            case SDLK_s:
+                component_get<Component_Movement>(entity_player)->dir &= ~MOVEMENT_DOWN;
+                break;
+            case SDLK_d:
+                component_get<Component_Movement>(entity_player)->dir &= ~MOVEMENT_RIGHT;
+                break;
+            }
             break;
         default:
             break;
@@ -94,6 +125,9 @@ void update() {
     }
 
     double dt = 1./60.;
+
+    component_movement_update();
+
     render(dt);
 }
 
@@ -105,8 +139,10 @@ void render(double dt) {
     SDL_SetRenderDrawColor( renderer, 0x44, 0x44, 0x44, 0xFF );
     SDL_RenderClear(renderer);
 
+    glm::dvec2 pos = component_get<Component_Pos>(entity_player)->pos;
+
     // Draw rect
-    SDL_Rect fillRect = { g_x, 40, 50, 50 };
+    SDL_Rect fillRect = { (int)pos.x, -(int)pos.y, 50, 50 };
     SDL_SetRenderDrawColor( renderer, 0xFF, 0xFF, 0x00, 0xFF );
     SDL_RenderFillRect( renderer, &fillRect );
 
