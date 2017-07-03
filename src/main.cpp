@@ -4,6 +4,7 @@
 #include "component/pos.h"
 #include "component/movement.h"
 #include "entity/player.h"
+#include "core/quadtree.h"
 
 #include <SDL2/SDL.h>
 #include <stdio.h>
@@ -49,6 +50,14 @@ int main(int argc, char* argv[]) {
 }
 
 void init() {
+    Quadtree quadtree;
+    // Bad test
+    quadtree.init();
+    u32 node = quadtree.insert_node({1, 0, 0});
+    quadtree.insert_children(node);
+    quadtree.erase_node(node);
+    quadtree.destroy();
+
     entity_manager_init<Component_Name, Component_Pos, Component_Movement, Component_Sprite>();
     entity_player = entity_create();
     entity_player_create(entity_player);
