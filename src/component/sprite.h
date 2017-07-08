@@ -3,7 +3,7 @@
 #include "core/common.h"
 #include "entity_manager.h"
 
-#include <SDL2/SDL.h>
+#include <SDL.h>
 #include <glm/glm.hpp>
 
 Array<u32> g_component_sprite_entities;

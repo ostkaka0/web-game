@@ -5,11 +5,17 @@ set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
+SET(GCC_COVERAGE_COMPILE_FLAGS "-s USE_SDL=2")
+#SET(GCC_COVERAGE_LINK_FLAGS    "-s USE_SDL=2")
+
 #find_package(SDL2 REQUIRED)
+#set(glm_DIR /usr/share/cmake/glm)#find_package(glm REQUIRED)
 add_subdirectory(deps/SDL2)
+#add_subdirectory(deps/glm)
 
+MESSAGE(${SDL2_SOURCE_DIR})
 
-include_directories("src/")
+include_directories("src/" "${SDL2_SOURCE_DIR}/include" "deps/glm/")
 
 #include_directories("deps/SDL2/include/")
 
@@ -23,3 +29,4 @@ endif()
 target_link_libraries(${PROJECT_NAME} SDL2)
 
 #file(COPY ./data DESINATION ${CMAKE_CURRENT_BINARY_DIR})
+

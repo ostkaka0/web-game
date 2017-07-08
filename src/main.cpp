@@ -5,8 +5,9 @@
 #include "component/movement.h"
 #include "entity/player.h"
 #include "core/quadtree.h"
+#include "point_world.h"
 
-#include <SDL2/SDL.h>
+#include <SDL.h>
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -26,7 +27,10 @@ u32 entity_player;
 
 int main(int argc, char* argv[]) {
     printf("!!!\n");
-
+    Point_World point_world;
+    point_world.init(10.0);
+    point_world.add({0.5, 0.7}, 0.1);
+    point_world.deinit();
     init();
 
     // Game loop:
@@ -51,17 +55,24 @@ int main(int argc, char* argv[]) {
 
 void init() {
     Quadtree quadtree;
-    // Bad test
     quadtree.init();
-    u32 node = quadtree.insert_node({1, 0, 0});
+    // Bad test
+    Point_World point_world;
+    point_world.init(10.0);
+    point_world.size = 10.0;
+    SCOPE_EXIT(point_world.deinit());
+    point_world.add({0.3, 0.6}, 0.9);
+    u32 node = quadtree.insert_node(0 | 1);
     quadtree.insert_children(node);
-    quadtree.erase_node(node);
+    quadtree.insert_children(quadtree[node | 3]);
+    quadtree.erase_children(quadtree[node | 3]);
+    quadtree.erase_node(0 | 1);
     quadtree.destroy();
 
     entity_manager_init<Component_Name, Component_Pos, Component_Movement, Component_Sprite>();
     entity_player = entity_create();
     entity_player_create(entity_player);
-    for (int i = 0; i < 100000; i++) {
+    for (int i = 0; i < 1000; i++) {
         u32 entity = entity_create();
         entity_player_create(entity, {800 + glm::cos((double)i*59)*700.0, -450 + (double)-glm::sin(((double)i)*117.)*400}, { i%256, (i/256)%256, (i/256/256)%256, 1 });
     }

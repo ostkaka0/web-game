@@ -102,9 +102,9 @@ void Array<T>::swap(size_t index_a, size_t index_b) {
 
 template<typename T>
 bool Array<T>::resize(size_t length, size_t value) {
-    assert(length >= 0);
+    assert(length != -1);
     if (length && !this->reserve(length)) return false;
-    memset((char*)this->data + this->byte_length, value, this->byte_capacity - this->byte_length);
+    if (length > this->length()) memset((u8*)this->data + this->byte_length, value, length * sizeof(T) - this->byte_length);
     this->byte_length = length * sizeof(T);
     return true;
 }

@@ -19,4 +19,3 @@ _ScopeExit<F> _MakeScopeExit(F f) {
 #define SCOPE_EXIT(code) auto STRING_JOIN2(scope_exit_, __LINE__) = _MakeScopeExit([&](){code;})
 #define SCOPE(begin, end) begin; SCOPE_EXIT(end)
 #define SCOPE_OBJ(obj, begin, end) (obj).begin; SCOPE_EXIT((obj).end)
- 

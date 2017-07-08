@@ -34,11 +34,13 @@ glm::dvec2 quadtree_node_pos_to_dvec(glm::u32vec3 pos) {
 //
 
 void Quadtree::init() {
-    Array::init();
+    memset(this, 0, sizeof(*this));
 }
 
 void Quadtree::destroy() {
     Array::destroy();
+    this->parents.destroy();
+    this->node_pos.destroy();
 }
 
 // Read
@@ -67,6 +69,27 @@ bool Quadtree::is_branch(u32 node) {
     assert(node | 3 < this->length() || node == 0);
     if (this->length() == 0) return false;
     return (this->data[node | 0] && this->data[node | 1] && this->data[node | 2] && this->data[node | 3]);
+}
+
+u32 Quadtree::get_parent(u32 node) {
+    this->parents[node >> 2];
+}
+
+glm::u32vec3 Quadtree::get_pos_from_branch(u32 node) {
+    return this->node_pos[node >> 2];
+}
+
+glm::u32vec3 Quadtree::get_pos_from_leaf(u32 node) {
+    if (node >> 2 == 0) return {0, 0, 0};
+    u32 parent = this->parents[node >> 2];
+    return quadtree_calc_child_pos(this->node_pos[parent >> 2], parent);
+}
+
+glm::u32vec3 Quadtree::get_pos(u32 node) {
+    if (is_leaf(node))
+        return get_pos_from_leaf(node);
+    else
+        return get_pos_from_branch(node);
 }
 
 // Write
@@ -112,29 +135,28 @@ void Quadtree::insert_children(u32 node, Array<u32>* erased_nodes) {
     for (int i = 0; i < 4; ++i) {
         u32 child = quadtree_writer_create_node(this);
         assert(child != node);
-        this->data[node | i] = child;
+        this->data[node | i] = child;     // node-child
+        this->parents[child >> 2] = node | i; // node-parent
     }
+    if (this->node_pos.length() <= node >> 2) this->node_pos.resize((node >> 2) + 1);
+    this->node_pos[node >> 2] = this->get_pos_from_leaf(node); // parent-pos
 }
 
-u32 Quadtree::insert_node(glm::u32vec3 relative_pos, u32 base_node, Array<u32>* erased_nodes) {
-    if (this->length() == 0) this->resize(4);
-    assert(base_node | 3 < this->length() && base_node >= 0 && base_node % 4 == 0);
-    assert(relative_pos.z <= 32 && relative_pos.z >= 0);
+u32 Quadtree::insert_node(u32 node_index, Array<u32>* erased_node_indexs) {
+    if (this->length() == 0) { this->resize(4); this->parents.resize(4); }
+    assert(node_index | 3 < this->length());
 
-    if (relative_pos.z == 0) {
-        this->erase_children(base_node, erased_nodes);
-        return base_node;
+    u32 child = this->data[node_index];
+    if (child == 0) {
+        child = quadtree_writer_create_node(this);
+        assert(child != node_index);
+        this->data[node_index] = child;
+        this->parents[child >> 2] = node_index;
+        if (this->node_pos.length() <= node_index >> 2) this->node_pos.resize((node_index >> 2) + 1);
+        this->node_pos[node_index >> 2] = this->get_pos_from_leaf(node_index);
     }
-    relative_pos.z--;
-
-    int index = quadtree_pos_to_index(relative_pos);
-    if (this->data[base_node | index] == 0) {
-        u32 child = quadtree_writer_create_node(this);
-        assert(child != base_node);
-        this->data[base_node | index] = child;
-    }
-    assert(base_node != this->data[base_node | index]);
-    return this->insert_node(relative_pos, this->data[base_node | index], erased_nodes);
+    assert(node_index >> 2 != this->data[node_index] >> 2);
+    return child;
 }
 
 // static
@@ -148,6 +170,7 @@ static u32 quadtree_writer_create_node(Quadtree* quadtree_writer) {
     } else {
         node = quadtree_writer->length();
         quadtree_writer->grow(4);
+        quadtree_writer->parents.grow(1);
     }
     assert(node | 3 < quadtree_writer->length() && node >= 0 && node % 4 == 0);
     return node;
