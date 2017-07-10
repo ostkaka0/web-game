@@ -2,6 +2,7 @@
 
 #include "core/common.h"
 #include "entity_manager.h"
+#include "component/physics.h"
 
 #include <SDL.h>
 #include <glm/glm.hpp>
@@ -22,8 +23,9 @@ void component_sprite_render(SDL_Renderer* renderer) {
         Component_Sprite* sprite = component_get<Component_Sprite>(entity);
         assert(sprite);
 
-        if (Component_Pos* pos = component_get<Component_Pos>(entity)) {
-            SDL_Rect fill_rect = { (int)pos->pos.x, (int)-pos->pos.y, 4, 4 };
+        if (Component_Physics* physics = component_get<Component_Physics>(entity)) {
+            glm::dvec2 pos = g_physics.point_pos[physics->id];
+            SDL_Rect fill_rect = { (int)pos.x, (int)-pos.y, 4, 4 };
             SDL_SetRenderDrawColor(renderer, sprite->color.x, sprite->color.y, sprite->color.z, sprite->color.w);
             SDL_RenderFillRect(renderer, &fill_rect);
         }

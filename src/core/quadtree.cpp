@@ -60,14 +60,14 @@ u32 Quadtree::find_node(glm::u32vec3 pos, u32 node) {
 }
 
 bool Quadtree::is_leaf(u32 node) {
-    assert(node | 3 < this->length() || node == 0);
-    if (this->length() == 0) return true;
+    if (this->length() <= 4) return true;
+    assert(node | 3 < this->length());
     return !(this->data[node | 0] || this->data[node | 1] || this->data[node | 2] || this->data[node | 3]);
 }
 
 bool Quadtree::is_branch(u32 node) {
-    assert(node | 3 < this->length() || node == 0);
-    if (this->length() == 0) return false;
+    if (this->length() <= 4) return false;
+    assert(node | 3 < this->length());
     return (this->data[node | 0] && this->data[node | 1] && this->data[node | 2] && this->data[node | 3]);
 }
 
@@ -102,6 +102,7 @@ void Quadtree::free_nodes(Array<u32> nodes) {
 }
 
 void Quadtree::erase_children(u32 node, Array<u32>* erased_nodes, Array<u32>* erased_node_indices) {
+    node &= ~3;
     assert(node | 3 < this->length() && node >= 0 && node % 4 == 0);
     for (int i = 0; i < 4; ++i) {
         u32 child = this->data[node | i];
@@ -130,6 +131,7 @@ void Quadtree::erase_node(u32 node_index, Array<u32>* erased_nodes, Array<u32>* 
 }
 
 void Quadtree::insert_children(u32 node, Array<u32>* erased_nodes) {
+    node &= ~3;
     assert(node | 3 < this->length() && node >= 0 && node % 4 == 0);
     this->erase_children(node, erased_nodes);
     for (int i = 0; i < 4; ++i) {

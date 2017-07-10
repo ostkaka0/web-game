@@ -116,11 +116,12 @@ T component_add(u32 id, T component) {
 
     g_entity_flags[id] |= ((u64)1 << g_component_info<T>::id);
 
+    component.init(id);
+
     if (g_component_info<T>::data.length() <= id)
         g_component_info<T>::data.resize(id + 1);
     g_component_info<T>::data[id] = component;
 
-    component.init(id);
     return component;
 }
 

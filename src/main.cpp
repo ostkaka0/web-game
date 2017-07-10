@@ -1,7 +1,7 @@
 #include "core/common.h"
 #include "entity_manager.h"
 #include "component/name.h"
-#include "component/pos.h"
+#include "component/physics.h"
 #include "component/movement.h"
 #include "entity/player.h"
 #include "core/quadtree.h"
@@ -69,7 +69,7 @@ void init() {
     quadtree.erase_node(0 | 1);
     quadtree.destroy();
 
-    entity_manager_init<Component_Name, Component_Pos, Component_Movement, Component_Sprite>();
+    entity_manager_init<Component_Name, Component_Physics, Component_Movement, Component_Sprite>();
     entity_player = entity_create();
     entity_player_create(entity_player);
     for (int i = 0; i < 1000; i++) {

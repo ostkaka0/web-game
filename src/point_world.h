@@ -3,6 +3,8 @@
 #include "core/common.h"
 #include "core/quadtree.h"
 
+#include <math.h>
+
 #define POINT_WORLD_MAX_NODE_POINTS 4
 
 // TODO: Multiple quadtree-chunks
@@ -73,17 +75,16 @@ void Point_World::remove(u32 point_id) {
 void Point_World::move_point(u32 point_id, glm::dvec2 pos, double radius) {
     assert(point_id >= 0 && point_id < this->point_node.length());
     u32 node = this->point_node[point_id];
-    glm::u32vec3 node_pos = this->quadtree.get_pos_from_leaf(node);
+    if (node != -1) {
+        glm::u32vec3 node_pos = this->quadtree.get_pos_from_leaf(node);
+        glm::u32vec2 wanted_node_pos = {(pos.x / 2. / this->size + 0.5) * (1 << node_pos.z), (pos.y / 2. / this->size + 0.5) * (1 << node_pos.z)};
 
-    glm::u32vec2 wanted_node_pos = {(pos.x / 2. / this->size + 0.5) * (1 << node_pos.z), (pos.y / 2. / this->size + 0.5) * (1 << node_pos.z)};
-
-    if (node_pos.x == wanted_node_pos.x && node_pos.y == wanted_node_pos.y && radius == this->point_radius[point_id]) {
-        this->point_pos[point_id] = pos;
-        return;
+        if (node_pos.x == wanted_node_pos.x && node_pos.y == wanted_node_pos.y && radius == this->point_radius[point_id]) {
+            this->point_pos[point_id] = pos;
+            return;
+        }
+        this->erase_from_tree(point_id, this->point_pos[point_id], this->point_radius[point_id]);
     }
-
-    // Change node:
-    this->erase_from_tree(point_id, this->point_pos[point_id], this->point_radius[point_id]);
     this->point_pos[point_id] = pos;
     this->point_radius[point_id] = radius;
     this->insert_to_tree(pos, radius, point_id);
@@ -154,39 +155,46 @@ u32 Point_World::find_node_by_pos(glm::u32vec3* ref_node_pos, u32 node, glm::dve
 
 // TODO: Split node before inserting point
 void Point_World::insert_to_tree(glm::dvec2 pos, double radius, u32 point_id) {
-    glm::u32vec3 node_pos = {0, 0, 0};
-    u32 node = this->find_node_by_pos(&node_pos, 0, pos, radius);
     if (!this->quadtree.length()) {
         this->quadtree.resize(4);
+        this->quadtree.parents.resize(1);
         this->quadtree_points.resize(4);
     }
-    Array<u32>* node_array_ptr = &this->quadtree_points[node >> 2];
+    // Don't put NAN positions in tree
+    if (!isfinite(pos.x) || !isfinite(pos.y))  {
+        this->point_node[point_id] = -1;
+        return;
+    }
+
+    glm::u32vec3 node_pos = {0, 0, 0};
+    u32 node = this->find_node_by_pos(&node_pos, 0, pos, radius);
 
 
     this->point_node[point_id] = node;
-    node_array_ptr->push(point_id);
+    this->quadtree_points[node >> 2].push(point_id);
+    Array<u32> node_array = this->quadtree_points[node >> 2];
 
     ////////////////////////////////////////////////////////
     // Split node:
     ////////////////////////////////////////////////////////
 
     // Deny split
-    if (node_array_ptr->length() <= POINT_WORLD_MAX_NODE_POINTS || this->quadtree.is_branch(node) || node_pos.z == 32)
+    if (node_array.length() <= POINT_WORLD_MAX_NODE_POINTS || this->quadtree.is_branch(node) || node_pos.z == 32)
         return;
 
     // Deny split when too large
-    double node_size = this->size / 2 * glm::pow(2, -node_pos.z);
+    double node_size = this->size / 2 / (double)(1 << node_pos.z);//* glm::pow<double>(2.0, (double)-node_pos.z);
     for (int i = 0; true; i++) {
-        if (i == node_array_ptr->length()) return; // Don't split
-        double radius = this->point_radius[point_node[i]];
+        if (i == node_array.length()) return; // Don't split
+        double radius = this->point_radius[node_array[i]];
         if (radius < node_size) break; // Split
     }
 
     // Split:
     this->quadtree.insert_children(node);
-    while (this->quadtree_points.length() < (this->quadtree.length() >> 2)) this->quadtree_points.grow(4);
-    Array<u32> node_array = *node_array_ptr;
-    *node_array_ptr = {0, 0, 0};
+    if (this->quadtree_points.length() < (this->quadtree.length() >> 2))
+        this->quadtree_points.resize(this->quadtree.length() >> 2);
+    this->quadtree_points[node >> 2] = {0, 0, 0};
 
     for (int i = 0; i < node_array.length(); i++) {
         u32 other_point_id = node_array[i];
@@ -237,7 +245,7 @@ void Point_World::merge_parent(u32 child_to_merge) {
         Array<u32>* child_array = &this->quadtree_points[child >> 2];
         if (child_array->length() == 0) continue;
         for (int j = 0; j < child_array->length(); j++) {
-            this->point_node[(*parent_array)[j]] = parent;
+            this->point_node[(*child_array)[j]] = parent;
         }
         if (parent_array->length() == 0) {
             parent_array->destroy();
@@ -268,6 +276,7 @@ void Point_World::merge_parent(u32 child_to_merge) {
 
 void Point_World::erase_from_tree(u32 point_id, glm::dvec2 pos, double radius) {
     u32 node = this->point_node[point_id];
+    assert(node < this->quadtree.length());
     glm::u32vec3 node_pos = this->quadtree.get_pos_from_leaf(node);
     glm::u32vec3 node_pos2 = {0, 0, 0};
     assert(node == this->find_node_by_pos(&node_pos2, 0, pos, radius));

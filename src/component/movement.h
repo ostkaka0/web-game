@@ -2,7 +2,7 @@
 
 #include "core/common.h"
 #include "entity_manager.h"
-#include "component/pos.h"
+#include "component/physics.h"
 
 #include <stdio.h>
 
@@ -36,9 +36,9 @@ void component_movement_update() {
     for (int i = 0; i < g_movement_entities.length(); i++) {
         u32 entity = g_movement_entities[i];
         Component_Movement* movement = component_get<Component_Movement>(entity);
-        Component_Pos* pos = component_get<Component_Pos>(entity);
+        Component_Physics* physics = component_get<Component_Physics>(entity);
         assert(movement);
-        if (!pos) continue;
+        if (!physics) continue;
 
         glm::dvec2 dir(0.0);
         if (movement->dir & MOVEMENT_RIGHT) dir.x += 1.0;
@@ -46,7 +46,8 @@ void component_movement_update() {
         if (movement->dir & MOVEMENT_UP) dir.y += 1.0;
         if (movement->dir & MOVEMENT_DOWN) dir.y -= 1.0;
         if (glm::length(dir) > 0.0001) dir = glm::normalize(dir);
+        else continue;
 
-        pos->pos += dir;
+        g_physics.move_point(physics->id, g_physics.point_pos[physics->id] + dir, 1.0);
     }
 }
