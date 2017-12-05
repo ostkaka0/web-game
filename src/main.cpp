@@ -25,7 +25,7 @@ SDL_Renderer* renderer;
 bool quit = false;
 u32 entity_player;
 
-int main(int argc, char* argv[]) {
+int main(int argc, char** argv) {
     printf("!!!\n");
     Point_World point_world;
     point_world.init(10.0);
@@ -38,7 +38,7 @@ int main(int argc, char* argv[]) {
     EM_ASM(console.log("console.log from cpp-file using EM_ASM!"));
     emscripten_set_main_loop(update, 60, 1);
 #else
-    uint32_t frame_time, last_frame_time;
+    uint32_t frame_time=SDL_GetTicks(), last_frame_time;
     while (!quit) {
         update();
 

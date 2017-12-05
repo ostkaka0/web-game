@@ -107,7 +107,7 @@ void Point_World::find_in_radius(Array<u32>* points, glm::dvec2 pos, double radi
         if (!child) return;
 
         glm::u32vec3 child_pos = quadtree_calc_child_pos(node_pos, i);
-        double scale = glm::pow(2, -child_pos.z);
+        double scale = glm::pow(2, -(s32)child_pos.z);
         glm::dvec2 delta = {this->size * (-1 + 2 * child_pos.x * scale), this->size * (-1 + 2 * child_pos.y * scale)};
         delta -= pos;
         delta = {glm::abs(delta[0] - 0.5) + 0.5, glm::abs(delta[1] - 0.5) + 0.5};
