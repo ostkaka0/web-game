@@ -5,7 +5,7 @@
 
 #include <stdio.h>
 
-struct Component_Name {
+struct Ent_Name {
     char* name;
     bool dealloc;
 
@@ -13,6 +13,6 @@ struct Component_Name {
     void deinit(u32 id) {
         if (dealloc) free(name);
     }
-    static void component_init() {}
-    static void component_deinit() {}
+    static void ent_init() {}
+    static void ent_deinit() {}
 };

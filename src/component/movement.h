@@ -15,7 +15,7 @@ enum Movement_Dir {
 
 Array<u32> g_movement_entities;
 
-struct Component_Movement {
+struct Ent_Movement {
     u8 dir;
 
     void init(u32 id) {
@@ -24,19 +24,19 @@ struct Component_Movement {
     void deinit(u32 id) {
         g_movement_entities.heap_erase(id);
     }
-    static void component_init() {
+    static void ent_init() {
         g_movement_entities.init();
     }
-    static void component_deinit() {
+    static void ent_deinit() {
         g_movement_entities.destroy();
     }
 };
 
-void component_movement_update() {
+void ent_movement_update() {
     for (int i = 0; i < g_movement_entities.length(); i++) {
         u32 entity = g_movement_entities[i];
-        Component_Movement* movement = component_get<Component_Movement>(entity);
-        Component_Physics* physics = component_get<Component_Physics>(entity);
+        auto movement = entity_get<Ent_Movement>(entity);
+		auto physics = entity_get<Ent_Physics>(entity);
         assert(movement);
         if (!physics) continue;
 

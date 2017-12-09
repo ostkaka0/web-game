@@ -69,7 +69,7 @@ void init() {
     quadtree.erase_node(0 | 1);
     quadtree.destroy();
 
-    entity_manager_init<Component_Name, Component_Physics, Component_Movement, Component_Sprite>();
+    entity_manager_init<Ent_Name, Ent_Physics, Ent_Movement, Ent_Sprite>();
     entity_player = entity_create();
     entity_player_create(entity_player);
     for (int i = 0; i < 1000; i++) {
@@ -91,18 +91,20 @@ void init() {
         exit(1);
     }
 
-    // The window is open: could enter program loop here (see SDL_PollEvent())
-
     renderer = SDL_CreateRenderer( window, -1, SDL_RENDERER_ACCELERATED );
 }
 
 void deinit() {
+	entity_manager_deinit();
+
     SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);
     SDL_Quit();
 }
 
 void update() {
+	auto movement = entity_get<Ent_Movement>(entity_player);
+
     SDL_Event event;
     while(!quit && SDL_PollEvent(&event)) {
         switch(event.type) {
@@ -111,35 +113,37 @@ void update() {
             break;
         case SDL_KEYDOWN:
             if (event.key.keysym.sym == SDLK_ESCAPE) quit = true;
+			if (!movement) break;
             switch(event.key.keysym.sym) {
             case SDLK_w:
-                component_get<Component_Movement>(entity_player)->dir |= MOVEMENT_UP;
+				movement->dir |= MOVEMENT_UP;
                 break;
             case SDLK_a:
-                component_get<Component_Movement>(entity_player)->dir |= MOVEMENT_LEFT;
+				movement->dir |= MOVEMENT_LEFT;
                 break;
             case SDLK_s:
-                component_get<Component_Movement>(entity_player)->dir |= MOVEMENT_DOWN;
+				movement->dir |= MOVEMENT_DOWN;
                 break;
             case SDLK_d:
-                component_get<Component_Movement>(entity_player)->dir |= MOVEMENT_RIGHT;
+				movement->dir |= MOVEMENT_RIGHT;
                 break;
             }
 
             break;
         case SDL_KEYUP:
+			if (!movement) break;
             switch(event.key.keysym.sym) {
             case SDLK_w:
-                component_get<Component_Movement>(entity_player)->dir &= ~MOVEMENT_UP;
+				movement->dir &= ~MOVEMENT_UP;
                 break;
             case SDLK_a:
-                component_get<Component_Movement>(entity_player)->dir &= ~MOVEMENT_LEFT;
+				movement->dir &= ~MOVEMENT_LEFT;
                 break;
             case SDLK_s:
-                component_get<Component_Movement>(entity_player)->dir &= ~MOVEMENT_DOWN;
+				movement->dir &= ~MOVEMENT_DOWN;
                 break;
             case SDLK_d:
-                component_get<Component_Movement>(entity_player)->dir &= ~MOVEMENT_RIGHT;
+				movement->dir &= ~MOVEMENT_RIGHT;
                 break;
             }
             break;
@@ -150,7 +154,7 @@ void update() {
 
     double dt = 1./60.;
 
-    component_movement_update();
+    ent_movement_update();
 
     render(dt);
 }
@@ -163,7 +167,7 @@ void render(double dt) {
     SDL_SetRenderDrawColor( renderer, 0x44, 0x44, 0x44, 0xFF );
     SDL_RenderClear(renderer);
 
-    component_sprite_render(renderer);
+    ent_sprite_render(renderer);
 
     // Finish
     SDL_RenderPresent( renderer );

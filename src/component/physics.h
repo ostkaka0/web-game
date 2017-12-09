@@ -10,7 +10,7 @@
 
 Point_World g_physics;
 
-struct Component_Physics {
+struct Ent_Physics {
     u32 id;
     void init(u32 id) {
         this->id = g_physics.add({NAN, NAN}, 1.0);
@@ -19,10 +19,10 @@ struct Component_Physics {
     void deinit(u32 id) {
         g_physics.remove(this->id);
     }
-    static void component_init() {
+    static void ent_init() {
         g_physics.init(1.0e6);
     }
-    static void component_deinit() {
+    static void ent_deinit() {
         g_physics.deinit();
     }
 };

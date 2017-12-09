@@ -1,0 +1,49 @@
+﻿  main.cpp
+c:\cygwin64\home\ost\git\web-game\src\entity_manager.h(93): warning C4267: '=': conversion from 'size_t' to 'u32', possible loss of data
+c:\cygwin64\home\ost\git\web-game\src\core/quadtree.h(92): warning C4554: '|': check operator precedence for possible error; use parentheses to clarify precedence
+c:\cygwin64\home\ost\git\web-game\src\core/quadtree.h(98): warning C4554: '|': check operator precedence for possible error; use parentheses to clarify precedence
+c:\cygwin64\home\ost\git\web-game\src\core/quadtree.h(134): warning C4554: '|': check operator precedence for possible error; use parentheses to clarify precedence
+c:\cygwin64\home\ost\git\web-game\src\core/quadtree.h(149): warning C4554: '|': check operator precedence for possible error; use parentheses to clarify precedence
+c:\cygwin64\home\ost\git\web-game\src\core/quadtree.h(151): warning C4554: '|': check operator precedence for possible error; use parentheses to clarify precedence
+c:\cygwin64\home\ost\git\web-game\src\core/quadtree.h(163): warning C4554: '|': check operator precedence for possible error; use parentheses to clarify precedence
+c:\cygwin64\home\ost\git\web-game\src\core/quadtree.h(177): warning C4554: '|': check operator precedence for possible error; use parentheses to clarify precedence
+c:\cygwin64\home\ost\git\web-game\src\core/quadtree.h(202): warning C4267: '=': conversion from 'size_t' to 'u32', possible loss of data
+c:\cygwin64\home\ost\git\web-game\src\core/quadtree.h(206): warning C4554: '|': check operator precedence for possible error; use parentheses to clarify precedence
+c:\cygwin64\home\ost\git\web-game\src\point_world.h(53): warning C4267: '=': conversion from 'size_t' to 'u32', possible loss of data
+c:\cygwin64\home\ost\git\web-game\src\point_world.h(57): warning C4267: '=': conversion from 'size_t' to 'u32', possible loss of data
+c:\cygwin64\home\ost\git\web-game\src\point_world.h(233): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+c:\cygwin64\home\ost\git\web-game\src\point_world.h(238): warning C4267: '+=': conversion from 'size_t' to 'int', possible loss of data
+c:\cygwin64\home\ost\git\web-game\src\core/array.h(107): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  c:\cygwin64\home\ost\git\web-game\src\core/array.h(104): note: while compiling class template member function 'bool Array<u32>::resize(::size_t,::size_t)'
+  c:\cygwin64\home\ost\git\web-game\src\core/quadtree.h(176): note: see reference to function template instantiation 'bool Array<u32>::resize(::size_t,::size_t)' being compiled
+  c:\cygwin64\home\ost\git\web-game\src\core/quadtree.h(8): note: see reference to class template instantiation 'Array<u32>' being compiled
+c:\cygwin64\home\ost\git\web-game\src\core/array.h(206): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  c:\cygwin64\home\ost\git\web-game\src\core/array.h(232): note: see reference to function template instantiation 'size_t Array<u32>::binary_search<int array_less_function<T>(T,T)>(T,int,int)' being compiled
+          with
+          [
+              T=u32
+          ]
+  c:\cygwin64\home\ost\git\web-game\src\core/array.h(232): note: see reference to function template instantiation 'size_t Array<u32>::binary_search<int array_less_function<T>(T,T)>(T,int,int)' being compiled
+          with
+          [
+              T=u32
+          ]
+  c:\cygwin64\home\ost\git\web-game\src\component/sprite.h(14): note: see reference to function template instantiation 'size_t Array<u32>::binary_insert<int array_less_function<T>(T,T)>(T)' being compiled
+          with
+          [
+              T=u32
+          ]
+  c:\cygwin64\home\ost\git\web-game\src\component/sprite.h(14): note: see reference to function template instantiation 'size_t Array<u32>::binary_insert<int array_less_function<T>(T,T)>(T)' being compiled
+          with
+          [
+              T=u32
+          ]
+c:\cygwin64\home\ost\git\web-game\src\core/array.h(208): warning C4554: '>>': check operator precedence for possible error; use parentheses to clarify precedence
+  glad.c
+     Creating library C:\cygwin64\home\Ost\git\web-game\x64\Release\web-game.lib and object C:\cygwin64\home\Ost\git\web-game\x64\Release\web-game.exp
+  Generating code
+  18 of 169 functions (10.7%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    2 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  web-game.vcxproj -> C:\cygwin64\home\Ost\git\web-game\x64\Release\web-game.exe
