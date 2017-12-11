@@ -1,3 +1,3 @@
 #pragma once
 
-bool g_is_server = false;
+bool g_is_server = true;

@@ -5,6 +5,8 @@
 #include "core\bswap.h"
 #include "globals.h"
 
+#include <glm\glm.hpp>
+
 enum Enum_Cmd {
     CMD_NULL = 0,
     CMD_ENT_MOVE,
@@ -19,8 +21,7 @@ struct Cmd {
         struct {
             u32 ent;
             u8 input;
-            u16 rel_mouse_x;
-            u16 rel_mouse_y;
+            glm::vec2 rel_mouse; // Cursor position relative to world
         } ent_move;
     };
 };
@@ -44,8 +45,9 @@ void run(Cmd cmd) {
         //set_pos(cmd.ent, cmd.ent_move.pos);
         //set_vel(cmd.ent, cmd.ent_move.vel);
         auto movement = ent_get(cmd.ent, Movement);
+        movement->dir = cmd.ent_move.input;
         //movement->update_input(cmd.ent_move.input);
-        //movement->update_mouse_pos(cmd.ent_move.rel_mouse_pos);
+        //movement->update_mouse_pos(cmd.ent_move.rel_mouse);
         break;
     }
     default:
@@ -60,11 +62,25 @@ void endian_swap(Cmd* cmd) {
     }
     switch (cmd->type) {
     case CMD_ENT_MOVE:
-        bswap16(&cmd->ent_move.rel_mouse_x);
-        bswap16(&cmd->ent_move.rel_mouse_y);
+        bswap32((u32*)&cmd->ent_move.rel_mouse.x);
+        bswap32((u32*)&cmd->ent_move.rel_mouse.y);
         break;
     default:
         assert(0);
         break;
     }
+}
+
+void cmd_begin_tick() {
+    for (int i = 0; i < g_cmds.length(); i++) {
+        init(&g_cmds[i]);
+    }
+}
+
+void cmd_end_tick() {
+    for (int i = 0; i < g_cmds.length(); i++) {
+        run(g_cmds[i]);
+    }
+    g_cmds.clear();
+    g_tick++;
 }

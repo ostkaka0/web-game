@@ -106,45 +106,45 @@ void deinit() {
 void update() {
 	auto movement = ent_get(ent_player, Movement);
 
+    static u16 move_dir = 0;
+
     SDL_Event event;
-    while(!quit && SDL_PollEvent(&event)) {
-        switch(event.type) {
+    while (!quit && SDL_PollEvent(&event)) {
+        switch (event.type) {
         case SDL_QUIT:
             quit = true;
             break;
         case SDL_KEYDOWN:
             if (event.key.keysym.sym == SDLK_ESCAPE) quit = true;
-			if (!movement) break;
-            switch(event.key.keysym.sym) {
+            switch (event.key.keysym.sym) {
             case SDLK_w:
-				movement->dir |= MOVEMENT_UP;
+                move_dir |= MOVEMENT_UP;
                 break;
             case SDLK_a:
-				movement->dir |= MOVEMENT_LEFT;
+                move_dir |= MOVEMENT_LEFT;
                 break;
             case SDLK_s:
-				movement->dir |= MOVEMENT_DOWN;
+                move_dir |= MOVEMENT_DOWN;
                 break;
             case SDLK_d:
-				movement->dir |= MOVEMENT_RIGHT;
+                move_dir |= MOVEMENT_RIGHT;
                 break;
             }
 
             break;
         case SDL_KEYUP:
-			if (!movement) break;
-            switch(event.key.keysym.sym) {
+            switch (event.key.keysym.sym) {
             case SDLK_w:
-				movement->dir &= ~MOVEMENT_UP;
+                move_dir &= ~MOVEMENT_UP;
                 break;
             case SDLK_a:
-				movement->dir &= ~MOVEMENT_LEFT;
+                move_dir &= ~MOVEMENT_LEFT;
                 break;
             case SDLK_s:
-				movement->dir &= ~MOVEMENT_DOWN;
+                move_dir &= ~MOVEMENT_DOWN;
                 break;
             case SDLK_d:
-				movement->dir &= ~MOVEMENT_RIGHT;
+                move_dir &= ~MOVEMENT_RIGHT;
                 break;
             }
             break;
@@ -152,6 +152,16 @@ void update() {
             break;
         }
     }
+    if (movement && movement->dir != move_dir) {
+        Cmd cmd;
+        cmd.type = CMD_ENT_MOVE;
+        cmd.ent = ent_player;
+        cmd.ent_move.input = move_dir;
+        cmd.ent_move.rel_mouse = { 0.f, 0.f };
+        push(cmd);
+    }
+    cmd_begin_tick();
+    cmd_end_tick();
 
     double dt = 1./60.;
 
