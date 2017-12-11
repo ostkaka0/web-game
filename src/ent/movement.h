@@ -1,8 +1,8 @@
 #pragma once
 
 #include "core/common.h"
-#include "entity_manager.h"
-#include "component/physics.h"
+#include "ent_manager.h"
+#include "ent/physics.h"
 
 #include <stdio.h>
 
@@ -34,9 +34,9 @@ struct Ent_Movement {
 
 void ent_movement_update() {
     for (int i = 0; i < g_movement_entities.length(); i++) {
-        u32 entity = g_movement_entities[i];
-        auto movement = entity_get<Ent_Movement>(entity);
-		auto physics = entity_get<Ent_Physics>(entity);
+        u32 ent = g_movement_entities[i];
+        auto movement = ent_get(ent, Movement);
+		auto physics = ent_get(ent, Physics);
         assert(movement);
         if (!physics) continue;
 

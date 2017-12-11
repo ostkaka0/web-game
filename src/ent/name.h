@@ -1,7 +1,7 @@
 #pragma once
 
 #include "core/common.h"
-#include "entity_manager.h"
+#include "ent_manager.h"
 
 #include <stdio.h>
 

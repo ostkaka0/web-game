@@ -156,8 +156,10 @@
     <ClCompile Include="external/src/*.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src/*.h" />
+    <ClInclude Include="src\cmd.h" />
     <ClInclude Include="src/*/*.h" />
+    <ClInclude Include="src\globals.h" />
+    <ClInclude Include="src\world.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

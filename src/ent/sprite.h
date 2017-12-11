@@ -1,8 +1,8 @@
 #pragma once
 
 #include "core/common.h"
-#include "entity_manager.h"
-#include "component/physics.h"
+#include "ent_manager.h"
+#include "ent/physics.h"
 
 #include <SDL.h>
 #include <glm/glm.hpp>
@@ -19,11 +19,11 @@ struct Ent_Sprite {
 
 void ent_sprite_render(SDL_Renderer* renderer) {
     for (int i = 0; i < g_ent_sprite_entities.length(); i++) {
-        u32 entity = g_ent_sprite_entities[i];
-        auto sprite = entity_get<Ent_Sprite>(entity);
+        u32 ent = g_ent_sprite_entities[i];
+        auto sprite = ent_get(ent, Sprite);
         assert(sprite);
 
-        if (auto physics = entity_get<Ent_Physics>(entity)) {
+        if (auto physics = ent_get(ent, Physics)) {
             glm::dvec2 pos = g_physics.point_pos[physics->id];
             SDL_Rect fill_rect = { (int)pos.x, (int)-pos.y, 4, 4 };
             SDL_SetRenderDrawColor(renderer, sprite->color.x, sprite->color.y, sprite->color.z, sprite->color.w);

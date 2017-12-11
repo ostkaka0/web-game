@@ -1,11 +1,12 @@
 #include "core/common.h"
-#include "entity_manager.h"
-#include "component/name.h"
-#include "component/physics.h"
-#include "component/movement.h"
-#include "entity/player.h"
+#include "ent_manager.h"
+#include "ent/name.h"
+#include "ent/physics.h"
+#include "ent/movement.h"
+#include "entities.h"
 #include "core/quadtree.h"
 #include "point_world.h"
+#include "cmd.h"
 
 #include <SDL.h>
 #include <stdio.h>
@@ -23,7 +24,7 @@ void render(double dt); // called by update()
 SDL_Window *window;
 SDL_Renderer* renderer;
 bool quit = false;
-u32 entity_player;
+u32 ent_player;
 
 int main(int argc, char** argv) {
     printf("!!!\n");
@@ -69,12 +70,12 @@ void init() {
     quadtree.erase_node(0 | 1);
     quadtree.destroy();
 
-    entity_manager_init<Ent_Name, Ent_Physics, Ent_Movement, Ent_Sprite>();
-    entity_player = entity_create();
-    entity_player_create(entity_player);
+    ent_manager_init<Ent_Name, Ent_Physics, Ent_Movement, Ent_Sprite>();
+    ent_player = ent_create();
+    entity_player_cerate(ent_player);
     for (int i = 0; i < 1000; i++) {
-        u32 entity = entity_create();
-        entity_player_create(entity, {800 + glm::cos((double)i*59)*700.0, -450 + (double)-glm::sin(((double)i)*117.)*400}, { i%256, (i/256)%256, (i/256/256)%256, 1 });
+        u32 ent = ent_create();
+        entity_player_cerate(ent, {800 + glm::cos((double)i*59)*700.0, -450 + (double)-glm::sin(((double)i)*117.)*400}, { i%256, (i/256)%256, (i/256/256)%256, 1 });
     }
     SDL_Init(SDL_INIT_VIDEO);
     window = SDL_CreateWindow(
@@ -95,7 +96,7 @@ void init() {
 }
 
 void deinit() {
-	entity_manager_deinit();
+	ent_manager_deinit();
 
     SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);
@@ -103,7 +104,7 @@ void deinit() {
 }
 
 void update() {
-	auto movement = entity_get<Ent_Movement>(entity_player);
+	auto movement = ent_get(ent_player, Movement);
 
     SDL_Event event;
     while(!quit && SDL_PollEvent(&event)) {
