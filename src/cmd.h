@@ -2,10 +2,10 @@
 
 #include "core\common.h"
 #include "core\array.h"
-#include "core\bswap.h"
 #include "globals.h"
 
-#include <glm\glm.hpp>
+#include <winsock2.h>
+#include <glm/glm.hpp>
 
 enum Enum_Cmd {
     CMD_NULL = 0,
@@ -26,8 +26,7 @@ struct Cmd {
     };
 };
 
-Array<Cmd> g_cmds;
-u32 g_tick;
+Array<Cmd> g_cmds = {};
 
 void push(Cmd cmd) {
     if (!g_is_server) return;
@@ -44,10 +43,10 @@ void run(Cmd cmd) {
     case CMD_ENT_MOVE: {
         //set_pos(cmd.ent, cmd.ent_move.pos);
         //set_vel(cmd.ent, cmd.ent_move.vel);
-        auto movement = ent_get(cmd.ent, Movement);
-        movement->dir = cmd.ent_move.input;
-        //movement->update_input(cmd.ent_move.input);
-        //movement->update_mouse_pos(cmd.ent_move.rel_mouse);
+        auto move = ent_get(cmd.ent, Move);
+        move->dir = cmd.ent_move.input;
+        //move->update_input(cmd.ent_move.input);
+        //move->update_mouse_pos(cmd.ent_move.rel_mouse);
         break;
     }
     default:
@@ -58,12 +57,12 @@ void run(Cmd cmd) {
 
 void endian_swap(Cmd* cmd) {
     if (cmd->type >= CMD_ENT_BEGIN) {
-        bswap32(&cmd->ent);
+        cmd->ent = htonl(cmd->ent);
     }
     switch (cmd->type) {
     case CMD_ENT_MOVE:
-        bswap32((u32*)&cmd->ent_move.rel_mouse.x);
-        bswap32((u32*)&cmd->ent_move.rel_mouse.y);
+        cmd->ent_move.rel_mouse.x = htonf(cmd->ent_move.rel_mouse.x);
+        cmd->ent_move.rel_mouse.y = htonf(cmd->ent_move.rel_mouse.y);
         break;
     default:
         assert(0);
@@ -82,5 +81,4 @@ void cmd_end_tick() {
         run(g_cmds[i]);
     }
     g_cmds.clear();
-    g_tick++;
 }

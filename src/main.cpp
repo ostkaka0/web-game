@@ -2,7 +2,7 @@
 #include "ent_manager.h"
 #include "ent/name.h"
 #include "ent/physics.h"
-#include "ent/movement.h"
+#include "ent/move.h"
 #include "entities.h"
 #include "core/quadtree.h"
 #include "point_world.h"
@@ -70,7 +70,7 @@ void init() {
     quadtree.erase_node(0 | 1);
     quadtree.destroy();
 
-    ent_manager_init<Ent_Name, Ent_Physics, Ent_Movement, Ent_Sprite>();
+    ent_manager_init<Ent_Name, Ent_Physics, Ent_Move, Ent_Sprite>();
     ent_player = ent_create();
     entity_player_cerate(ent_player);
     for (int i = 0; i < 1000; i++) {
@@ -104,7 +104,7 @@ void deinit() {
 }
 
 void update() {
-	auto movement = ent_get(ent_player, Movement);
+	auto move = ent_get(ent_player, Move);
 
     static u16 move_dir = 0;
 
@@ -118,16 +118,16 @@ void update() {
             if (event.key.keysym.sym == SDLK_ESCAPE) quit = true;
             switch (event.key.keysym.sym) {
             case SDLK_w:
-                move_dir |= MOVEMENT_UP;
+                move_dir |= MOVE_UP;
                 break;
             case SDLK_a:
-                move_dir |= MOVEMENT_LEFT;
+                move_dir |= MOVE_LEFT;
                 break;
             case SDLK_s:
-                move_dir |= MOVEMENT_DOWN;
+                move_dir |= MOVE_DOWN;
                 break;
             case SDLK_d:
-                move_dir |= MOVEMENT_RIGHT;
+                move_dir |= MOVE_RIGHT;
                 break;
             }
 
@@ -135,16 +135,16 @@ void update() {
         case SDL_KEYUP:
             switch (event.key.keysym.sym) {
             case SDLK_w:
-                move_dir &= ~MOVEMENT_UP;
+                move_dir &= ~MOVE_UP;
                 break;
             case SDLK_a:
-                move_dir &= ~MOVEMENT_LEFT;
+                move_dir &= ~MOVE_LEFT;
                 break;
             case SDLK_s:
-                move_dir &= ~MOVEMENT_DOWN;
+                move_dir &= ~MOVE_DOWN;
                 break;
             case SDLK_d:
-                move_dir &= ~MOVEMENT_RIGHT;
+                move_dir &= ~MOVE_RIGHT;
                 break;
             }
             break;
@@ -152,7 +152,7 @@ void update() {
             break;
         }
     }
-    if (movement && movement->dir != move_dir) {
+    if (move && move->dir != move_dir) {
         Cmd cmd;
         cmd.type = CMD_ENT_MOVE;
         cmd.ent = ent_player;
@@ -165,7 +165,7 @@ void update() {
 
     double dt = 1./60.;
 
-    ent_movement_update();
+    ent_move_update();
 
     render(dt);
 }
