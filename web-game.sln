@@ -9,18 +9,12 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "code_gen", "code_gen.vcxpro
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		code_gen|x64 = code_gen|x64
-		code_gen|x86 = code_gen|x86
 		Debug|x64 = Debug|x64
 		Debug|x86 = Debug|x86
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{1672044D-75AB-4B90-A2E9-252968058FEC}.code_gen|x64.ActiveCfg = code_gen|x64
-		{1672044D-75AB-4B90-A2E9-252968058FEC}.code_gen|x64.Build.0 = code_gen|x64
-		{1672044D-75AB-4B90-A2E9-252968058FEC}.code_gen|x86.ActiveCfg = code_gen|Win32
-		{1672044D-75AB-4B90-A2E9-252968058FEC}.code_gen|x86.Build.0 = code_gen|Win32
 		{1672044D-75AB-4B90-A2E9-252968058FEC}.Debug|x64.ActiveCfg = Debug|x64
 		{1672044D-75AB-4B90-A2E9-252968058FEC}.Debug|x64.Build.0 = Debug|x64
 		{1672044D-75AB-4B90-A2E9-252968058FEC}.Debug|x86.ActiveCfg = Debug|Win32
@@ -29,10 +23,6 @@ Global
 		{1672044D-75AB-4B90-A2E9-252968058FEC}.Release|x64.Build.0 = Release|x64
 		{1672044D-75AB-4B90-A2E9-252968058FEC}.Release|x86.ActiveCfg = Release|Win32
 		{1672044D-75AB-4B90-A2E9-252968058FEC}.Release|x86.Build.0 = Release|Win32
-		{5948DE88-CB9F-45FB-90BE-4007DB4C3285}.code_gen|x64.ActiveCfg = code_gen|x64
-		{5948DE88-CB9F-45FB-90BE-4007DB4C3285}.code_gen|x64.Build.0 = code_gen|x64
-		{5948DE88-CB9F-45FB-90BE-4007DB4C3285}.code_gen|x86.ActiveCfg = code_gen|Win32
-		{5948DE88-CB9F-45FB-90BE-4007DB4C3285}.code_gen|x86.Build.0 = code_gen|Win32
 		{5948DE88-CB9F-45FB-90BE-4007DB4C3285}.Debug|x64.ActiveCfg = Debug|x64
 		{5948DE88-CB9F-45FB-90BE-4007DB4C3285}.Debug|x64.Build.0 = Debug|x64
 		{5948DE88-CB9F-45FB-90BE-4007DB4C3285}.Debug|x86.ActiveCfg = Debug|Win32

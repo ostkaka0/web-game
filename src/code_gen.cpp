@@ -11,7 +11,7 @@
 
 #include "core\common.h"
 
-#define ERROR(...) (printf("ERROR: "), printf(__VA_ARGS__), printf("\n"), getchar() , exit(-1))
+#define ERROR(...) (printf("ERROR: "), printf(__VA_ARGS__), printf("\n"), assert(0), getchar() , exit(-1))
 
 static char* read_file(const char* path) {
     FILE* file = fopen(path, "r");
@@ -27,13 +27,13 @@ static char* read_file(const char* path) {
 }
 
 enum Datatype {
-    DATATYPE_8 = 0,
-    DATATYPE_16,
-    DATATYPE_32,
-    DATATYPE_64,
-    DATATYPE_SIGNED = 4,
-    DATATYPE_FLOAT = 8,
-    DATATYPE_ARRAY = 16
+    DATATYPE_8 = 1,
+    DATATYPE_16 = 2,
+    DATATYPE_32 = 4,
+    DATATYPE_64 = 8,
+    DATATYPE_SIGNED = 16,
+    DATATYPE_FLOAT = 32,
+    DATATYPE_ARRAY = 64
 };
 
 typedef enum {
@@ -64,6 +64,8 @@ enum Ast_Type {
 
 struct Ast {
     Ast_Type type;
+    char* str;
+    int len;
     union {
         struct {
             char* name;
@@ -82,6 +84,26 @@ static bool token_equals(const Token token, const char* str) {
     return (str[token.len] == '\0');
 }
 
+bool is_space(char c) {
+    return (c == ' ' || c == '\t' || c == '\n' || c == '\r');
+}
+
+bool is_alpha(char c) {
+    return (c >= 'A' && c <= 'Z' || c >= 'a' && c <= 'z');
+}
+
+bool is_alnum(char c) {
+    return (c >= 'A' && c <= 'Z' || c >= 'a' && c <= 'z' || c >= '0' && c <= '9');
+}
+
+bool is_digit(char c) {
+    return (c >= '0' && c <= '9');
+}
+
+bool is_punct(char c) {
+    return (c >= '!' && c <= '/' || c >= ':' && c <= '@' || c >= '[' && c <= '`' || c >= '{' && c <= '~');
+}
+
 static Array<Token> tokenize(char* src) {
     Array<Token> tokens = {};
     int line_num = 0;
@@ -93,7 +115,7 @@ static Array<Token> tokenize(char* src) {
         size_t len = 0;
 
         // Skip whitespace
-        while (isspace(c[0])) {
+        while (is_space(c[0])) {
             if (c[0] == '\n') {
                 line_num++;
                 column_num = 0;
@@ -129,9 +151,9 @@ static Array<Token> tokenize(char* src) {
             break;
 
         // Identifier
-        if (isalpha(c[0]) || c[0] == '_') {
+        if (is_alpha(c[0]) || c[0] == '_') {
             token.type = TOKEN_IDENTIFIER;
-            do len++; while (isalnum(c[len]) || c[len] == '_');
+            do len++; while (is_alnum(c[len]) || c[len] == '_');
         }
         else if (c[0] == '\'') {
             token.type = TOKEN_CHAR;
@@ -155,12 +177,12 @@ static Array<Token> tokenize(char* src) {
         }
         else {
             // Int, Float
-            if (isdigit(c[0]) || (c[0] == '.')) {
+            if (is_digit(c[0]) || (c[0] == '.')) {
                 len = 0;
-                while (isdigit(c[len])) len++;
+                while (is_digit(c[len])) len++;
 
                 if (c[len] == '.') {
-                    do len++; while (isdigit(c[len]) || c[len] == '.' || tolower(c[len]) == 'f' || tolower(c[len]) == 'e');
+                    do len++; while (is_digit(c[len]) || c[len] == '.' || tolower(c[len]) == 'f' || tolower(c[len]) == 'e');
                     if (len != 1) token.type = TOKEN_FLOAT;
                     else len = 0;
                 }
@@ -169,7 +191,7 @@ static Array<Token> tokenize(char* src) {
             }
             // Char:
             // Operator:
-            if (token.type == TOKEN__NULL && (ispunct(c[0]))) {
+            if (token.type == TOKEN__NULL && (is_punct(c[0]))) {
                 token.type = TOKEN_OPERATOR;
                 // +=  -=  *=  /=  %=  ^=  !=  <=  >=  ==
                 if (c[1] == '=' && (c[0] == '+' || c[0] == '-' || c[0] == '*' || c[0] == '/' || c[0] == '%' || c[0] == '^' || c[0] == '!' || c[0] == '<' || c[0] == '>' || c[0] == '='))
@@ -189,7 +211,7 @@ static Array<Token> tokenize(char* src) {
             }
         }
         if (token.type == TOKEN__NULL) {
-            printf("Unexpected character '%c'\n", c[0]);
+            ERROR("Unexpected character '%c'\n", c[0]);
             len = 1;
         }
 
@@ -249,31 +271,76 @@ Ast parse_msg_struct(Array<Token> tokens, Token** token_ptr) {
     return ast;
 }
 
-Ast parse_ast(Array<Token> tokens, Token** token_ptr) {
-    Token* token = *token_ptr;
-    Ast ast = {};
-    while (!ast.type && token->type != TOKEN__NULL) {
+Array<Ast> parse(Array<Token> tokens, char* str_code) {
+    Token* token = &tokens[0];
+    Array<Ast> array = {};
+    char* raw_begin = str_code;
+    char* raw_end = NULL;
+    while (token->type) {
+        raw_end = token->str;
         if (token->str[0] == '@') {
             token++;
-            if (strncmp(token->str, "msg", token->len) == 0) {
+            if (token->str && strncmp(token->str, "msg", token->len) == 0) {
                 token++;
-                ast = parse_msg_struct(tokens, &token);
+                Ast ast_raw;
+                ast_raw.type = AST_RAW;
+                ast_raw.str = raw_begin;
+                ast_raw.len = (int)(raw_end - raw_begin);
+                array.push(ast_raw);
+                char* str = token->str;
+                Ast ast_msg_struct = parse_msg_struct(tokens, &token);
+                ast_msg_struct.str = str;
+                ast_msg_struct.len = token->str - str + 1;
+                array.push(ast_msg_struct);
+                raw_begin = token->str + token->len;
             } else {
                 token--;
             }
         }
+        raw_end = token->str + token->len;
         token++;
     }
-    *token_ptr = token;
-    return ast;
+    if (raw_begin < raw_end) {
+        Ast ast_raw;
+        ast_raw.type = AST_RAW;
+        ast_raw.str = raw_begin;
+        ast_raw.len = (int)(raw_end - raw_begin);
+        array.push(ast_raw);
+    }
+    return array;
 }
 
-Array<Ast> parse(Array<Token> tokens) {
-    Token* token = &tokens[0];
-    Array<Ast> array = {};
-    Ast ast = parse_ast(tokens, &token);
-    array.push(ast);
-    return array;
+void gen_code_serialize(FILE* stream, Ast ast, bool deserialize) {
+    if (deserialize)
+        fprintf(stream, "\nvoid deserialize(%.*s* msg) {\n", ast.msg.name_len, ast.msg.name);
+    else
+        fprintf(stream, "\nvoid serialize(%.*s* msg) {\n", ast.msg.name_len, ast.msg.name);
+    for (int i = 0; i < ast.msg.var_names.length(); i++) {
+        char* var_name = ast.msg.var_names[i];
+        int var_name_len = ast.msg.var_name_lens[i];
+        int datatype = ast.msg.var_types[i];
+        char* base_function = (deserialize) ? "ntoh" : "hton";
+        char* function = NULL;
+        if      ((datatype & DATATYPE_FLOAT) && (datatype & DATATYPE_32)) function = "f";
+        else if ((datatype & DATATYPE_FLOAT) && (datatype & DATATYPE_64)) function = "d";
+        else if (datatype & DATATYPE_8)  function = "c";
+        else if (datatype & DATATYPE_16) function = "s";
+        else if (datatype & DATATYPE_32) function = "l";
+        else if (datatype & DATATYPE_64) function = "ll";
+        else ERROR("Unkown datatype");
+        printf("    msg->%.*s = %s%s(msg->%.*s);\n", var_name_len, var_name, base_function, function, var_name_len, var_name);
+    }
+    fprintf(stream, "}\n");
+}
+
+void gen_code(FILE* stream, Ast ast) {
+    switch (ast.type) {
+    case AST_MSG: {
+        gen_code_serialize(stream, ast, false);
+        gen_code_serialize(stream, ast, true);
+        break;
+    }
+    }
 }
 
 int main() {
@@ -282,9 +349,17 @@ int main() {
     input_files.push("src/msg.meta.h");
     input_files.push("src/ent.meta.h");
     for (int i = 0; i < input_files.length(); i++) {
-        char* src = "@msg struct sten { u8 a; u16 b; f64 x; };";// read_file(input_files[i]);
+        char* src = "/*едц abc*/ asdflksdf \n@msg struct sten { u8 a; u16 b; u32 c; u64 d; f32 x; f64 y; };\n sdfsdf";// read_file(input_files[i]);
         Array<Token> tokens = tokenize(src);
-        Array<Ast> ast = parse(tokens);
+        Array<Ast> ast_array = parse(tokens, src);
+        for (int i = 0; i < ast_array.length(); i++) {
+            Ast ast = ast_array[i];
+            printf("%.*s", ast.len, ast.str);
+            if (ast.type == AST_MSG) {
+                gen_code(stdout, ast);
+            }
+        }
+        getchar();
         printf("...");
     }
     return 0;
