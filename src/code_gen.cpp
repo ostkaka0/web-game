@@ -12,6 +12,7 @@
 #include "core\common.h"
 
 #define ERROR(...) (printf("ERROR: "), printf(__VA_ARGS__), printf("\n"), assert(0), getchar() , exit(-1))
+#define TOKEN_EXPECT_STR(token, str2) if (!token->str || strlen(str2) != token->len || strncmp(token->str, str2,  token->len)) ERROR("Expected '%s', but got '%.*s'", str2, token->len, token->str)
 
 static char* read_file(const char* path) {
     FILE* file = fopen(path, "r");
@@ -68,6 +69,11 @@ struct Ast {
     int len;
     union {
         struct {
+            char* str;
+            int len;
+        } raw;
+        struct {
+            int id;
             char* name;
             int name_len;
             Array<int> var_types;
@@ -77,6 +83,7 @@ struct Ast {
     };
 };
 
+Array<Ast> g_msgs;
 
 static bool token_equals(const Token token, const char* str) {
     for (int i = 0; i < token.len; i++)
@@ -233,18 +240,16 @@ Ast parse_msg_struct(Array<Token> tokens, Token** token_ptr) {
     Ast ast = {};
     ast.type = AST_MSG;
     Token* token = *token_ptr;
-    if (strncmp(token->str, "struct", token->len) != 0) ERROR("@msg must be struct");
-    token++;
     if (token->type != TOKEN_IDENTIFIER) ERROR("expected identifier, but got '%.*s'", token->len, token->str);
     ast.msg.name = token->str;
     ast.msg.name_len = token->len;
     token++;
-    if (token->str[0] != '{') ERROR("expected '{', but got '%.*s'", token->len, token->str);
+    TOKEN_EXPECT_STR(token, "(");
     token++;
     while (true) {
         int datatype;
         if (!token->type) ERROR("Missing expected token");
-        if (token->str[0] == '}') break;
+        if (token->str[0] == ')') break;
         char* str = token->str;
         if      (str[0] == 'u')  datatype = 0;
         else if (str[0] == 's')  datatype = DATATYPE_SIGNED;
@@ -263,11 +268,32 @@ Ast parse_msg_struct(Array<Token> tokens, Token** token_ptr) {
         ast.msg.var_names.push(token->str);
         ast.msg.var_name_lens.push(token->len);
         token++;
-        if (!token->str || token->str[0] != ';') ERROR("Unexpected token '%.*s'", token->len, token->str);
+        if (token->str && token->str[0] == ')') break;
+        TOKEN_EXPECT_STR(token, ",");
         token++;
     }
     token++;
+    TOKEN_EXPECT_STR(token, "{");
+    ast.str = token->str+1;
+    int scope_count = 1;
+    while (true) {
+        token++;
+        if (!token->type) ERROR("Missing expected token");
+        if (token->str[0] == '{') {
+            scope_count++; 
+            continue;
+        }
+        else if (token->str[0] == '}') {
+            scope_count--;
+            if (scope_count == 0) break;
+            continue;
+        }
+    }
+    ast.len = (int)(token->str - ast.str);
+    token++;
     *token_ptr = token;
+    ast.msg.id = g_msgs.length();
+    g_msgs.push(ast);
     return ast;
 }
 
@@ -289,10 +315,11 @@ Array<Ast> parse(Array<Token> tokens, char* str_code) {
                 array.push(ast_raw);
                 char* str = token->str;
                 Ast ast_msg_struct = parse_msg_struct(tokens, &token);
-                ast_msg_struct.str = str;
-                ast_msg_struct.len = token->str - str + 1;
+                //ast_msg_struct.str = str;
+                //ast_msg_struct.len = token->str - str + 1;
                 array.push(ast_msg_struct);
                 raw_begin = token->str + token->len;
+                continue;
             } else {
                 token--;
             }
@@ -300,7 +327,7 @@ Array<Ast> parse(Array<Token> tokens, char* str_code) {
         raw_end = token->str + token->len;
         token++;
     }
-    if (raw_begin < raw_end) {
+    if (raw_begin && raw_begin < raw_end) {
         Ast ast_raw;
         ast_raw.type = AST_RAW;
         ast_raw.str = raw_begin;
@@ -310,15 +337,43 @@ Array<Ast> parse(Array<Token> tokens, char* str_code) {
     return array;
 }
 
+
+char* get_type_str(int datatype) {
+    switch (datatype) {
+    case DATATYPE_8:  return "u8";
+    case DATATYPE_16: return "u16";
+    case DATATYPE_32: return "u32";
+    case DATATYPE_64: return "u64";
+    case DATATYPE_8 | DATATYPE_SIGNED: return "s8";
+    case DATATYPE_16 | DATATYPE_SIGNED: return "s16";
+    case DATATYPE_32 | DATATYPE_SIGNED: return "s32";
+    case DATATYPE_64 | DATATYPE_SIGNED: return "s64";
+    case DATATYPE_32 | DATATYPE_FLOAT: return "f32";
+    case DATATYPE_64 | DATATYPE_FLOAT: return "f64";
+    }
+    /*if      (datatype & DATATYPE_FLOAT ) fprintf(stream, "f");
+    else if (datatype & DATATYPE_SIGNED) fprintf(stream, "s");
+    else                                 fprintf(stream, "u");
+    if      (datatype & DATATYPE_8 ) fprintf(stream, "8" );
+    else if (datatype & DATATYPE_16) fprintf(stream, "16");
+    else if (datatype & DATATYPE_32) fprintf(stream, "32");
+    else if (datatype & DATATYPE_64) fprintf(stream, "64");
+    else assert(0);*/
+}
+
 void gen_code_serialize(FILE* stream, Ast ast, bool deserialize) {
-    if (deserialize)
+    /*if (deserialize)
         fprintf(stream, "\nvoid deserialize(%.*s* msg) {\n", ast.msg.name_len, ast.msg.name);
     else
-        fprintf(stream, "\nvoid serialize(%.*s* msg) {\n", ast.msg.name_len, ast.msg.name);
+        fprintf(stream, "\nvoid serialize(%.*s* msg) {\n", ast.msg.name_len, ast.msg.name);*/
+    if (!deserialize)
+        fprintf(stream, "    *(u16*)(_data+0) = htons(%i);\n", ast.msg.id);
+    int byte_index = 2;
     for (int i = 0; i < ast.msg.var_names.length(); i++) {
         char* var_name = ast.msg.var_names[i];
         int var_name_len = ast.msg.var_name_lens[i];
         int datatype = ast.msg.var_types[i];
+        int data_size = (datatype & 15);
         char* base_function = (deserialize) ? "ntoh" : "hton";
         char* function = NULL;
         if      ((datatype & DATATYPE_FLOAT) && (datatype & DATATYPE_32)) function = "f";
@@ -328,18 +383,50 @@ void gen_code_serialize(FILE* stream, Ast ast, bool deserialize) {
         else if (datatype & DATATYPE_32) function = "l";
         else if (datatype & DATATYPE_64) function = "ll";
         else ERROR("Unkown datatype");
-        printf("    msg->%.*s = %s%s(msg->%.*s);\n", var_name_len, var_name, base_function, function, var_name_len, var_name);
+        if (deserialize)
+            fprintf(stream, "    %s %.*s = ntoh%s(*(%s*)(_data+%i));\n", get_type_str(datatype), var_name_len, var_name, function, get_type_str(datatype), byte_index);
+        else
+            fprintf(stream, "    *(%s*)(_data+%i) = hton%s(%.*s);\n", get_type_str(datatype), byte_index, function, var_name_len, var_name);
+        byte_index += data_size;
+        //printf("    %.*s = %s%s(%.*s);\n", var_name_len, var_name, base_function, function, var_name_len, var_name);
     }
-    fprintf(stream, "}\n");
+   // fprintf(stream, "}\n");
 }
 
 void gen_code(FILE* stream, Ast ast) {
     switch (ast.type) {
     case AST_MSG: {
-        gen_code_serialize(stream, ast, false);
+
+        fprintf(stream, "void _%.*s_receive(u8* _data) {\n", ast.msg.name_len, ast.msg.name);
         gen_code_serialize(stream, ast, true);
+        fprintf(stream, "%.*s", ast.len, ast.str);
+        fprintf(stream, "}\n");
+
+        fprintf(stream, "void %.*s(", ast.msg.name_len, ast.msg.name);
+        int total_size = 2;
+        for (int i = 0; i < ast.msg.var_names.length(); i++) {
+            char* var_name = ast.msg.var_names[i];
+            int var_name_len = ast.msg.var_name_lens[i];
+            int datatype = ast.msg.var_types[i];
+            int data_size = (datatype & 15);
+            total_size += data_size;
+            if (i != 0) fprintf(stream, ", ");
+            fprintf(stream, get_type_str(datatype));
+            fprintf(stream, " %.*s", var_name_len, var_name);
+        }
+        fprintf(stream, ") {\n");
+        //gen_code_serialize(stream, ast, false);
+        fprintf(stream, "    u8* _data = malloc(%i);\n", total_size);
+        gen_code_serialize(stream, ast, false);
+        fprintf(stream, "\n    if (g_is_server) _%.*s_receive(_data);\n", ast.msg.name_len, ast.msg.name);
+        fprintf(stream, "}\n");
+
+        //gen_code_serialize(stream, ast, true);
         break;
     }
+    default:
+        fprintf(stream, "%.*s", ast.len, ast.str);
+        break;
     }
 }
 
@@ -349,16 +436,26 @@ int main() {
     input_files.push("src/msg.meta.h");
     input_files.push("src/ent.meta.h");
     for (int i = 0; i < input_files.length(); i++) {
-        char* src = "/*едц abc*/ asdflksdf \n@msg struct sten { u8 a; u16 b; u32 c; u64 d; f32 x; f64 y; };\n sdfsdf";// read_file(input_files[i]);
+        char* src = "@msg msg_sten(u8 a, u16 b, u32 c, u64 d, f32 x, f64 y) {\n    printf(\"msg_sten:%i\\n\", a); \n}\n\n";// read_file(input_files[i]);
         Array<Token> tokens = tokenize(src);
         Array<Ast> ast_array = parse(tokens, src);
         for (int i = 0; i < ast_array.length(); i++) {
             Ast ast = ast_array[i];
-            printf("%.*s", ast.len, ast.str);
-            if (ast.type == AST_MSG) {
-                gen_code(stdout, ast);
-            }
+            gen_code(stdout, ast);
         }
+        fprintf(stdout, "void receive(void* data, size_t len) {\n");
+        fprintf(stdout, "    size_t index = 0;\n");
+        fprintf(stdout, "    while(index < len) {\n");
+        fprintf(stdout, "        u16 id = ntohs(*(u16*)(data+index));\n");
+        fprintf(stdout, "        switch(id) {\n");
+        for (int i = 0; i < g_msgs.length(); i++) {
+            fprintf(stdout, "            case %i: _%.*s_receive(data+index); break;\n", i, g_msgs[i].msg.name_len, g_msgs[i].msg.name);
+        }
+        fprintf(stdout, "            default: assert(0);\n");
+        fprintf(stdout, "        }\n");
+        fprintf(stdout, "    }\n");
+        fprintf(stdout, "    assert(index == len);\n");
+        fprintf(stdout, "}\n");
         getchar();
         printf("...");
     }
