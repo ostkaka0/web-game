@@ -4,6 +4,7 @@ build/
 .vs/
 [Dd]ebug/
 CMakeLists.txt.user
+*.meta.out.h
 
 # This file is used to ignore files which are generated
 # ----------------------------------------------------------------------------
