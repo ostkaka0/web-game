@@ -78,6 +78,7 @@ void ent_manager_deinit() {
 
 // Get ent-component by component-type
 #define ent_get(id, T) (&g_ent_info<Ent_##T>::data[id])
+#define ent_get2(id, T) (&g_ent_info<T>::data[id])
 
 // Get ent-component by component-id
 void* ent_get_by_id(u32 id, int ent_id) {
@@ -132,6 +133,6 @@ void ent_remove(u32 id) {
     assert(g_ent_flags.length() > id);
     assert(g_ent_flags[id] & ((u64)1 << g_ent_info<T>::id));
     g_ent_flags[id] &= ~((u64)1 << g_ent_info<T>::id);
-    ent_get<T>(id)->deinit(id);
+    ent_get2(id, T)->deinit(id);
 }
 

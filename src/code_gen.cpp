@@ -9,7 +9,7 @@
 #include <ctype.h>
 #include <string.h>
 
-#include "core\common.h"
+#include "core/common.h"
 
 #define ERROR(...) (printf("ERROR: "), printf(__VA_ARGS__), printf("\n"), assert(0), getchar() , exit(-1))
 #define TOKEN_EXPECT_STR(token, str2) if (!token->str || strlen(str2) != token->len || strncmp(token->str, str2,  token->len)) ERROR("Expected '%s', but got '%.*s'", str2, token->len, token->str)
@@ -381,7 +381,7 @@ void gen_code_serialize(FILE* stream, Ast ast, bool deserialize) {
         int var_name_len = ast.msg.var_name_lens[i];
         int datatype = ast.msg.var_types[i];
         int data_size = (datatype & 15);
-        char* base_function = (deserialize) ? "ntoh" : "hton";
+        const char* base_function = (deserialize) ? "ntoh" : "hton";
         char* function = NULL;
         if      ((datatype & DATATYPE_FLOAT) && (datatype & DATATYPE_32)) function = "f";
         else if ((datatype & DATATYPE_FLOAT) && (datatype & DATATYPE_64)) function = "d";

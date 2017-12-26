@@ -1,10 +1,17 @@
 #pragma once
 
-#include "core\common.h"
-#include "core\array.h"
+#include "core/common.h"
+#include "core/array.h"
 #include "globals.h"
 
+#ifdef _WIN32
 #include <winsock2.h>
+#else
+#include <sys/socket.h>
+#include <arpa/inet.h>
+#define htonf htonl
+#define htond htonll
+#endif
 #include <glm/glm.hpp>
 
 enum Enum_Cmd {

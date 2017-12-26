@@ -153,7 +153,7 @@ void update() {
         }
     }
     if (move && move->dir != move_dir) {
-        Cmd cmd;
+        Cmd cmd = {};
         cmd.type = CMD_ENT_MOVE;
         cmd.ent = ent_player;
         cmd.ent_move.input = move_dir;

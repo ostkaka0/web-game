@@ -21,8 +21,9 @@ include_directories("src/" "${SDL2_SOURCE_DIR}/include" "deps/glm/")
 
 #include_directories(${SDL2_INCLUDE_DIR})
 
-file(GLOB_RECURSE SRC_LIST "src/*.cpp" "src/*.h")
-add_executable(${PROJECT_NAME} ${SRC_LIST})
+file(GLOB_RECURSE SRC_LIST "src/*.h")
+add_executable(${PROJECT_NAME} src/main.cpp ${SRC_LIST})
+add_executable(${PROJECT_NAME}_cod_gen src/code_gen.cpp ${SRC_LIST})
 if(${EMSCRIPTEN})
     set_target_properties(${PROJECT_NAME} PROPERTIES LINK_FLAGS "-s USE_SDL=2")
 endif()
